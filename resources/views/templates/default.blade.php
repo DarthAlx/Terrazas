@@ -41,7 +41,7 @@
         <div class="navbar-fixed">
           <nav id="headernav" class="headergrande">
             <div class="nav-wrapper">
-              <a href="#!" class="brand-logo"><img src="{{ url('img/terrazas.png') }}" alt="" class="img-responsive"></a>
+              <a href="#!" class="brand-logo"><img src="{{ url('img/TERRAZAS.png') }}" alt="" class="img-responsive"></a>
               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="#">Proveedores</a></li>
