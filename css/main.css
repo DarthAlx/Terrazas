@@ -5,6 +5,7 @@
    ========================================================================== */
 html, body{
     font-family: Lato;
+    font-size: 16px;
 }
 header{
     background: url('../img/bg.jpg');
@@ -37,17 +38,30 @@ header{
     font-style: normal;
 }
 nav{
-        background: transparent;
+    background: transparent;
     border: none;
     box-shadow: none;
     font-family: Lato;
     font-size: 2rem;
     font-weight: 700;
 }
+.navbar-fixed{
+        position: absolute;
+}
 nav ul a, nav ul a:hover, nav ul a:focus{
     text-decoration: none;
     color: #fff;
 
+}
+.headergrande{
+    background: transparent;
+}
+.headermini{
+    background: rgba(255,255,255,0.3);
+}
+.brand-logo img{
+    max-width: 200px;
+    padding: 20px 15px;
 }
 
 @keyframes color-text {
@@ -81,7 +95,6 @@ background-position: 475px 0;
     -webkit-animation: color-text 8s linear infinite;
 }
 .group-title .banner {
-    font-size: 100px;
     text-transform: uppercase;
     margin: 0;
     font-weight: 900;
@@ -100,7 +113,6 @@ display: inline-block;
 padding-top: 50px;
 }
 .group-title .banner {
-font-size: 100px;
 text-transform: uppercase;
 margin: 0;
 font-weight: 900;
@@ -124,10 +136,53 @@ display: inline-block;
     border-bottom: 1px solid #fff;
     display: inline-block;
 }
-
-
-
-
+.filter{
+    background: #ffdd00;
+    color: #000;
+    padding: 30px 0;
+}
+.filter h5{
+    font-weight: bold;
+}
+.form-inline{
+    text-align: center;
+}
+.form-inline .form-control {
+    width: 100%;
+}
+.form-inline .btn{
+    background: #3C3C3C;
+    width: 100%;
+}
+.form-inline .btn:hover{
+    color: #fff;
+}
+.form-inline .form-group{
+    text-align: left;
+}
+.pestana{
+    position: absolute;
+    top: -70px;
+    margin: 0 auto;
+    left: 50%;
+    font-family: Lato;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.pestana p {
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    left: -50%;
+    background: #ffdd00;
+    padding: 10px 40px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+.pestana p a{
+    color: inherit;
+    text-decoration: none;
+}
 .titlemain{
     background: url('../img/money-256314_1280.png');
     background-size: cover;
@@ -145,8 +200,6 @@ display: inline-block;
 h1{
     margin: 0;
 }
-
-
 .info .info-item{
         padding: 80px 0;
 }
@@ -311,4 +364,7 @@ hr {
 
 .datepicker, .timepicker{
     cursor: pointer;
+}
+footer{
+    background: #3C3C3C;
 }

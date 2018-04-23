@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Libera Espacios</title>
+        <title>Terrazas</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" type="text/css" href="{{ url('css/style.css') }}?v={{rand()}}" media="screen" />
         <link rel="stylesheet" type="text/css" href="{{ url('css/main.css') }}?v={{rand()}}" media="screen" />
+        <link rel="stylesheet" type="text/css" href="{{ url('css/grid.css') }}?v={{rand()}}" media="screen" />
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         @yield('header')
@@ -28,6 +29,33 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+        <ul id="cuenta1" class="dropdown-content">
+          <li><a href="#">Entrar</a></li>
+          <li><a href="#">Registrarse</a></li>
+        </ul>
+        <ul id="cuenta2" class="dropdown-content">
+          <li><a href="#">Entrar</a></li>
+          <li><a href="#">Registrarse</a></li>
+        </ul>
+        <div class="navbar-fixed">
+          <nav id="headernav" class="headergrande">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo"><img src="{{ url('img/terrazas.png') }}" alt="" class="img-responsive"></a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="#">Proveedores</a></li>
+                <li><a class="dropdown-button" href="#" data-activates="cuenta1">Mi perfil</a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="#">Proveedores</a></li>
+                <li><a class="dropdown-button" href="#" data-activates="cuenta2">Mi perfil</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        
 
         <header class="valign-wrapper">
           <div class="container-fluid">
@@ -74,8 +102,7 @@
 
       
 
-      <footer class="page-footer blue darken-3">
-          
+      <footer>
           <div class="footer-copyright">
             <div class="container">
             © 2018 Todos los derechos reservados
@@ -105,8 +132,6 @@
               close: 'Ok',
               closeOnSelect: false // Close upon selecting a date,
             });
-
-
             $('.timepicker').pickatime({
                     default: 'now', 
                     fromnow: 0,       
@@ -118,6 +143,8 @@
                     ampmclickable: true
                     
                   });
+
+            
 
             
 
@@ -134,6 +161,25 @@
 
 
           });
+          function bajar(valor1){
+              $('html, body').animate({
+                  scrollTop: $(valor1).offset().top
+              }, 3000);
+            }
+
+
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 64){
+            $('#headernav').addClass("headermini").fadeIn();
+            $('#headernav').removeClass("headergrande");
+          }
+          else {
+            $('#headernav').removeClass("headermini").fadeIn();
+            $('#headernav').addClass("headergrande");
+
+          }
+        });
+
         </script>
 
     </body>

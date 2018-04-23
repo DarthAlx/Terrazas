@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+	.group-title .banner {
+	    font-size: 3rem;
+	}
+}
+@media (min-width: 768px) {
+	.group-title .banner {
+	    font-size: 5rem;
+	}
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
+}
