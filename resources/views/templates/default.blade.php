@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url('css/style.css') }}?v={{rand()}}" media="screen" />
         <link rel="stylesheet" type="text/css" href="{{ url('css/main.css') }}?v={{rand()}}" media="screen" />
         <link rel="stylesheet" type="text/css" href="{{ url('css/grid.css') }}?v={{rand()}}" media="screen" />
+        <link rel="stylesheet" href="{{ url('css/animation.css') }}">
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         @yield('header')
@@ -134,6 +135,10 @@
       <script type="text/javascript" src="{{ url('js/vendor/materialize.js') }}"></script>
 
       <script type="text/javascript" src="{{ url('js/main.js') }}"></script>
+      <script src="{{ url('js/wow.js') }}"></script>
+      <script>
+        new WOW().init();
+      </script>
       <script>
           $(document).ready(function() {  
             $('.collapsible').collapsible();

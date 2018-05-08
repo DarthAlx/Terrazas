@@ -7,9 +7,19 @@
 	.group-title .banner {
 	    font-size: 5rem;
 	}
+	.contact-box{
+		left: -120px;
+	    position: absolute;
+	    width: 100%;
+	}
 }
 @media (min-width: 992px) {
-
+	.contact-box{
+		left: -120px;
+	    top: 50px;
+	    position: absolute;
+	    width: 100%;
+	}
 }
 @media (min-width: 1200px) {
 

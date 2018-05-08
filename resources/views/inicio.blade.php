@@ -18,7 +18,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
 						<a href="#" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
@@ -30,7 +30,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
 						<a href="#" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
@@ -42,7 +42,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
 						<a href="#" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
@@ -54,7 +54,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
 						<a href="#" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
@@ -67,7 +67,58 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 5
+								</a>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 6
+								</a>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 7
+								</a>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 8
+								</a>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
+		<p>&nbsp;</p>
 	</div>
 
 	<div class="contact">
@@ -77,9 +128,12 @@
 					<h3 class="title-style-2">CONTACTO</h3>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 col-md-offset-5">
-					<div class="contact-box">
+			<div class="row" style="margin-bottom: 0;">
+				<div class="col-sm-8">
+					<img src="{{url('/img/contact.jpg')}}" class="img-responsive wow bounceInRight" alt="">
+				</div>
+				<div class="col-sm-4">
+					<div class="contact-box wow bounceInLeft">
 						<form>
 							<h5>CONTÁCTANOS</h5>
 		                    <div class="form-group">
@@ -104,6 +158,7 @@
 				</div>
 			</div>
 		</div>
+		<p style="margin-bottom: 0;">&nbsp;</p>
 	</div>
 
 

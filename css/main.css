@@ -476,8 +476,6 @@ footer{
     display: inline-block;
 }
 
-/*.contact{
-     background: url('../img/contactbg.jpg');
-    background-size: cover;
-    background-position: top center;
-}*/
+.contact{
+     background: #FBFBFB;
+}
