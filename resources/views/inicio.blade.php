@@ -10,41 +10,97 @@
 @endsection
 @section('pagecontent')
 
-	<div class="filter">
+	<div class="main">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="pestana">
-						<p onclick="bajar('#reservaciones');">
-							<a href="#reservaciones" class="pulse">
-								<i class="fa fa-calendar"></i> Explora
-							</a>
-						</p>
+					<h3 class="title-style-2">EXPLORA</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 1
+								</a>
+							</div>
+						</a>
 					</div>
-					<h5 class="text-center" id="reservaciones">RESERVACIONES</h5>
-					<form class="form-inline">
-					  <div class="form-group">
-					    <label for="donde">¿Dónde?</label>
-					    <input type="email" class="form-control browser-default" id="donde" placeholder="Lugar">
-					  </div>
-					  <div class="form-group">
-					    <label for="cuando">¿Cuándo?</label>
-					    <input type="text" class="form-control browser-default datepicker" id="cuando" placeholder="Fecha">
-					  </div>
-					  <div class="form-group">
-					    <label for="cuanto">¿Cuant@s?</label>
-					    <input type="email" class="form-control browser-default" id="cuanto" placeholder="No. de personas">
-					  </div>
-					  <div class="form-group">
-					    <label for="que">¿Qué?</label>
-					    <input type="email" class="form-control browser-default" id="que" placeholder="Terraza">
-					  </div>
-					  <div class="form-group">
-					    <label for="">&nbsp;</label>
-					  	<button type="submit" class="btn btn-default">Buscar</button>
-					  </div>
-					  
-					</form>
+				</div>
+				<div class="col-md-3">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 2
+								</a>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 3
+								</a>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="terraza-small">
+						<a href="#" class="link-wrapper">
+							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+							<div class="title-wrapper">
+								<a href="#" class="title">
+									Terraza 4
+								</a>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="title-style-2">CONTACTO</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-5">
+					<div class="contact-box">
+						<form>
+							<h5>CONTÁCTANOS</h5>
+		                    <div class="form-group">
+		                      <input type="text" class="form-control browser-default" placeholder="Nombre">
+		                    </div>
+		                    <div class="form-group">
+		                      <input type="email" class="form-control browser-default" placeholder="Correo electrónico">
+		                    </div>
+		                    <div class="form-group">
+		                      <input type="tel" class="form-control browser-default" placeholder="Teléfono">
+		                    </div>
+		                    <div class="form-group">
+		                      <textarea class="form-control browser-default" placeholder="Mensaje"></textarea>
+		                    </div>
+		                    <div class="form-group">
+		                      <label for="">&nbsp;</label>
+		                      <button type="submit" class="btn btn-default">Enviar <i class="fa fa-send" style="font-size: 1rem;"></i></button>
+		                    </div>
+		                    
+		                 </form>
+					</div>
 				</div>
 			</div>
 		</div>

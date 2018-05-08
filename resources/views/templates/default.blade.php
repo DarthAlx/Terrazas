@@ -70,31 +70,50 @@
                 </div>
                 </div>
               </div>
-              <!--div class="col-md-2">
-                <a href="{{url('/')}}">Libera Espacios Logo<img src="{{url('img/logo.png')}}" alt="logo" class="img-responsive"></a>
-              </div>
-              <div class="col-md-10">
-                <ul id="dropdown1" class="dropdown-content">
-                  <li><a href="{{url('/perfil')}}">Perfil</a></li>
-                  
-                  <li><a href="{{url('/salir')}}">Salir</a></li>
-                </ul>
-                <nav>
-                  <div class="nav-wrapper">
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                      @if (Auth::guest())
-                        <li><a href="{{url('/entrar')}}">Entrar</a></li>
-                        <li><a href="{{url('/registro')}}">Registrar</a></li>
-                      @else
-                      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Mi cuenta</a></li>
-                      @endif
-                    </ul>
-                  </div>
-                </nav>
-              </div-->
+              
             </div>
           </div>
+
         </header>
+        <div class="filter">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="pestana">
+                    <p onclick="bajar('#reservaciones');">
+                      <a href="#reservaciones" class="pulse">
+                        <i class="fa fa-calendar"></i> Explora
+                      </a>
+                    </p>
+                  </div>
+                  <h5 class="text-center" id="reservaciones">RESERVACIONES</h5>
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label for="donde">¿Dónde?</label>
+                        <input type="email" class="form-control browser-default" id="donde" placeholder="Lugar">
+                      </div>
+                      <div class="form-group">
+                        <label for="cuando">¿Cuándo?</label>
+                        <input type="text" class="form-control browser-default datepicker" id="cuando" placeholder="Fecha">
+                      </div>
+                      <div class="form-group">
+                        <label for="cuanto">¿Cuant@s?</label>
+                        <input type="email" class="form-control browser-default" id="cuanto" placeholder="No. de personas">
+                      </div>
+                      <div class="form-group">
+                        <label for="que">¿Qué?</label>
+                        <input type="email" class="form-control browser-default" id="que" placeholder="Terraza">
+                      </div>
+                      <div class="form-group">
+                        <label for="">&nbsp;</label>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                      </div>
+                      
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
         @yield('pagecontent')
