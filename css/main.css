@@ -61,11 +61,15 @@ a{
     background: transparent;
 }
 .headermini{
-    background: rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.3);
+    height: 85px;
 }
 .brand-logo img{
-    max-width: 200px;
+    max-width: 150px;
     padding: 20px 15px;
+}
+.nav-links{
+    padding: 10px 0;
 }
 
 .title-style-2 {
