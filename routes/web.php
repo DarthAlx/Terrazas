@@ -30,7 +30,9 @@ Route::get('/perfil', function () {
 
 Route::get('activacion/{token}/{email}', 'HomeController@activacion');
 
-
+Route::get('/terraza', function () {
+    return view('terraza');
+});
 
 // Authentication routes...
 Route::get('entrar', 'Auth\LoginController@showLoginForm');

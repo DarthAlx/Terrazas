@@ -58,7 +58,7 @@
 
         
 
-        <header class="valign-wrapper">
+        <header class="valign-wrapper headerindex">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
@@ -76,7 +76,7 @@
           </div>
 
         </header>
-        <div class="filter">
+        <div class="filter headerindex">
             <div class="container">
               <div class="row">
                 <div class="col-md-12">

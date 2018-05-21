@@ -57,6 +57,9 @@ nav ul a, nav ul a:hover, nav ul a:focus{
 a{
     text-decoration: none;
 }
+strong{
+    font-weight: 600;
+}
 .headergrande{
     background: transparent;
 }
