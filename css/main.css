@@ -54,8 +54,9 @@ nav ul a, nav ul a:hover, nav ul a:focus{
     color: #fff;
 
 }
-a{
+a, a:hover, a:focus{
     text-decoration: none;
+    color: #777;
 }
 strong{
     font-weight: 600;
@@ -485,4 +486,17 @@ footer{
 
 .contact{
      background: #FBFBFB;
+}
+.servicioslist li{
+    float: left;
+    margin-right: 20px;
+}
+.reservacion{
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: #fff;
+}
+.resfixed{
+    position: fixed;
+    top: 100px;
 }
