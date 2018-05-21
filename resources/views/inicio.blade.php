@@ -20,7 +20,7 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
@@ -32,7 +32,7 @@
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
@@ -44,7 +44,7 @@
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
@@ -56,7 +56,7 @@
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
@@ -70,7 +70,7 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
@@ -82,7 +82,7 @@
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
@@ -94,7 +94,7 @@
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
@@ -106,7 +106,7 @@
 				</div>
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="#" class="link-wrapper">
+						<a href="{{url('/terraza')}}" class="link-wrapper">
 							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
