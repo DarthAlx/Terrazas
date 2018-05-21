@@ -11,7 +11,9 @@
 @section('pagecontent')
 
 	<div class="main">
-		<div class="col-md-12" style="background: url({{url('img/terraza1.jpg')}}); background-size: cover; background-position: center center; height: 60vh;"></div>
+		<div class="col-md-12" style="background: url({{url('img/terraza1.jpg')}}); background-size: cover; background-position: center center; height: 60vh;">
+			<a href="#galeria" class="btn btn-primary" style="position: absolute; bottom: 20px;">Ver fotos</a>
+		</div>
 		
 
 		<div class="container">
@@ -20,7 +22,7 @@
 					<p>&nbsp;</p>
 					<h4><strong>Terraza 1</strong></h4>
 					<p>
-						Aquí la dirección completa de la terraza <br>
+						Aquí la zona de la terraza <br>
 
 
 					</p>
@@ -69,7 +71,7 @@
 							<h5><strong>$399 MXN</strong> <small>por evento</small></h5>
 							<hr>
 							<input type="date" class="datepicker" placeholder="Fecha">
-							<button class="btn" style="background: #ffdd00; width: 100%; color: #000; font-family: Lato; font-weight: 600">Reservar</button>
+							<button class="btn btn-primary" style="width: 100%;">Reservar</button>
 						</div>
 					</div>
 					<script>
@@ -90,6 +92,76 @@
 				</div>
 			</div>
 		</div>
+
+
+		<div id="galeria">
+	        <button type="button" class="close">&times;</button>
+	        
+	        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="{{url('/img/terraza1.jpg')}}" class="img-responsive">
+			    </div>
+			    <div class="item">
+			      <img src="{{url('/img/terraza1.jpg')}}" class="img-responsive">
+			    </div>
+			    <div class="item">
+			      <img src="{{url('/img/terraza1.jpg')}}" class="img-responsive">
+			    </div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="fa fa-chevron-left" aria-hidden="true" style="color: #fff;"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="fa fa-chevron-right" aria-hidden="true" style="color: #fff;"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+
+			  <br>
+			  <div class="indicadores">
+			  	<div class="container-fluid">
+			  		<div class="row">
+			  			<div class="col-md-2 col-sm-3 col-xs-4" style="cursor: pointer">
+			  				<img src="{{url('/img/terraza1.jpg')}}" data-target="#carousel-example-generic" data-slide-to="0" class="img-responsive active">
+			  			</div>
+			  			<div class="col-md-2 col-sm-3 col-xs-4" style="cursor: pointer">
+			  				<img src="{{url('/img/terraza1.jpg')}}" data-target="#carousel-example-generic" data-slide-to="1" class="img-responsive">
+			  			</div>
+			  			<div class="col-md-2 col-sm-3 col-xs-4" style="cursor: pointer">
+			  				<img src="{{url('/img/terraza1.jpg')}}" data-target="#carousel-example-generic" data-slide-to="2" class="img-responsive">
+			  			</div>
+			  		</div>
+			  	</div>
+			  </div>
+			  
+
+			</div>
+        </div>
+
+        <script>
+        	$(function () {
+			    $('a[href="#galeria"]').on('click', function(event) {
+			        event.preventDefault();
+			        $('#galeria').addClass('open');
+			        $('#galeria > form > input[type="search"]').focus();
+			    });
+			    
+			    $('#galeria, #galeria button.close').on('click keyup', function(event) {
+			        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+			            $(this).removeClass('open');
+			        }
+			    });
+			    
+
+			});
+        </script>
 		
 
 	</div>
