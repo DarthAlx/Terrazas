@@ -585,9 +585,12 @@ footer{
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
+    
+}
+.terrazatitle h3{
+    font-family: Lato;
     color: #fff;
     text-shadow: 1px 1px #000;
-    font-family: Lato;
 }
 
 .reservacionmini{

@@ -12,15 +12,18 @@
 
 	<div class="main">
 		<div class="col-md-12" style="background: url({{url('img/terraza1.jpg')}}); background-size: cover; background-position: center center; height: 60vh;">
-			<h3 class="terrazatitle"><strong>Terraza 1</strong></h3>
-			<a href="#galeria" class="btn btn-primary" style="position: absolute; bottom: 20px;">Ver fotos</a>
+			<div class="terrazatitle">
+				<h3><strong>Terraza 1</strong></h3>
+				<a href="#galeria" class="btn btn-primary" style="">Ver fotos</a>
+			</div>
+			
 		</div>
 		
 		<div class="container iconsterraza wow bounceInLeft">
 			<div class="row">
 				<p>&nbsp;</p>
 			  	<a class="navlinks" href="#">
-			  		<div class="col s6 m2 l2 offset-m2 offset-l2 company text-center">
+			  		<div class="col s6 m2 l2 offset-m1 offset-l1 company text-center">
 					  	<i class="fa fa-map-marker ite" aria-hidden="true"></i>
 					  	<p class="text-center navtext">Polanco</p>
 				  	</div>
@@ -35,6 +38,12 @@
 			  		<div class="col s6 m2 l2 company text-center">
 					  	<i class="fa fa-usd ite" aria-hidden="true"></i> 
 					  	<p class="text-center navtext">7,988</p>
+				  	</div>
+				</a>
+				<a class="navlinks" href="#">
+			  		<div class="col s6 m2 l2 company text-center">
+					  	<i class="fa fa-clock-o ite" aria-hidden="true"></i>
+					  	<p class="text-center navtext">11:00 - 22:00</p>
 				  	</div>
 				</a>
 				<a class="navlinks" href="#">
