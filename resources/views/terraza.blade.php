@@ -12,23 +12,49 @@
 
 	<div class="main">
 		<div class="col-md-12" style="background: url({{url('img/terraza1.jpg')}}); background-size: cover; background-position: center center; height: 60vh;">
+			<h3 class="terrazatitle"><strong>Terraza 1</strong></h3>
 			<a href="#galeria" class="btn btn-primary" style="position: absolute; bottom: 20px;">Ver fotos</a>
 		</div>
+		
+		<div class="container iconsterraza">
+			<div class="row">
+				<p>&nbsp;</p>
+			  	<a class="navlinks wow bounceInLeft" href="#">
+			  		<div class="col s6 m2 l2 offset-m2 offset-l2 company text-center">
+					  	<i class="fa fa-map-marker ite" aria-hidden="true"></i>
+					  	<p class="text-center navtext">Polanco</p>
+				  	</div>
+				</a>
+			  	<a class="navlinks wow bounceInLeft" href="#">
+			  		<div class="col s6 m2 l2 company text-center">
+					  	<i class="fa fa-tags ite" aria-hidden="true"></i>
+					  	<p class="text-center navtext">Terraza</p>
+				  	</div>
+				</a>
+				<a class="navlinks wow bounceInLeft" href="#">
+			  		<div class="col s6 m2 l2 company text-center">
+					  	<i class="fa fa-usd ite" aria-hidden="true"></i> 
+					  	<p class="text-center navtext">7,988</p>
+				  	</div>
+				</a>
+				<a class="navlinks wow bounceInLeft" href="#">
+			  		<div class="col s6 m2 l2 company text-center">
+					  	<i class="fa fa-users ite" aria-hidden="true"></i>
+					  	<p class="text-center navtext">50 - 100</p>
+				  	</div>
+				</a>
+				<br>
+				
+			</div>
+			<hr>
+		</div>
+
 		
 
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<p>&nbsp;</p>
-					<h4><strong>Terraza 1</strong></h4>
-					<p>
-						Aquí la zona de la terraza <br>
-
-
-					</p>
-					<p>
-						<i class="fa fa-users" aria-hidden="true"></i> 30 personas &nbsp; <i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i> 2 baños
-					</p>
+					<p><strong>Descripción</strong></p>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. A perferendis ipsum incidunt enim non quos dolores itaque animi doloremque dolore, facilis, impedit eius blanditiis unde praesentium fugit debitis sequi fuga. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas laborum commodi doloremque tempore quo laudantium quasi impedit, maxime alias aut nulla quisquam repellat distinctio quidem minus quod aliquid, vero voluptatum.
 					</p>
@@ -37,6 +63,7 @@
 					<ul class="servicioslist">
 						<li><i class="fa fa-wifi" aria-hidden="true"></i> WiFi</li>
 						<li><i class="fa fa-television" aria-hidden="true"></i> TV</li>
+						<li><i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i> 2 baños</li>
 					</ul>
 					<br>
 					<a role="button" data-toggle="collapse" href="#serviciosextra" aria-expanded="false" aria-controls="collapseExample">
@@ -66,7 +93,7 @@
 				</div>
 				<div class="col-md-4">
 					<p>&nbsp;</p>
-					<div class="reservacion" id="reservacion">
+					<div class="reservacion hidden-xs hidden-sm" id="reservacion">
 						<div class="precio">
 							<h5><strong>$399 MXN</strong> <small>por evento</small></h5>
 							<hr>
@@ -74,12 +101,24 @@
 							<button class="btn btn-primary" style="width: 100%;">Reservar</button>
 						</div>
 					</div>
+
+					<div class="reservacionmini visible-xs visible-sm" id="reservacionmini">
+						<div class="precio row">
+							<div class="col-xs-6">
+								<h5><strong>$399 MXN</strong> <small>por evento</small></h5>
+							</div>
+							<div class="col-xs-6">
+								<input type="date" class="datepicker" placeholder="Fecha">
+							</div>
+							
+							<button class="btn btn-primary" style="width: 100%;">Reservar</button>
+						</div>
+					</div>
 					<script>
 						var reservacion = document.getElementById("reservacion");
 
-						$(window).scroll(function()
-				            {
-				                if ($(this).scrollTop() >= reservacion.offsetTop){
+						$(window).scroll(function(){
+				                if ($(this).scrollTop() >= 768){
 				                  $('#reservacion').addClass("resfixed");
 
 								}
@@ -92,6 +131,9 @@
 				</div>
 			</div>
 		</div>
+		<p class="visible-xs visible-sm">&nbsp;</p>
+		<p class="visible-xs visible-sm">&nbsp;</p>
+		<p class="visible-xs visible-sm">&nbsp;</p>
 
 
 		<div id="galeria">

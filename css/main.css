@@ -579,3 +579,113 @@ footer{
     padding: 10px 17px;
     font-size: 27px;
 }
+.terrazatitle{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    font-family: Lato;
+}
+
+.reservacionmini{
+    background: #fff;
+        position: fixed !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    z-index: 4 !important;
+    
+    padding: 30px;
+}
+
+
+
+ p.navtext {
+      font-family:Tahoma;
+      color: #777;
+      font-size: 1.5rem;
+    }
+    .iconsterraza img {
+      padding: 5px;
+    }
+    /*.company {
+      background-color: #16225f;
+    }
+    .capabilities {
+      background-color: #80BD00;
+    }
+    .branding {
+      background-color: #00A1E1;
+    }
+    .creativelounge {
+      background-color: #FC4F00;
+    }
+    .customercare {
+      background-color: #932749;
+    }*/
+    .panel-heading {
+      background: #000;
+    }
+    .centered-form{
+        margin-top: 60px;
+    }
+    
+    .centered-form .panel{
+        background: #ffdd00;
+    }
+    
+    /*Circle*/
+    .navlinks div {
+        position: relative;
+    }
+    .navlinks div::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        background: #ffdd0078;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    .navlinks div:hover::before {
+        -webkit-animation: circle .75s;
+        animation: circle .75s;
+    }
+    @-webkit-keyframes circle {
+        0% {
+            opacity: 1;
+        }
+        40% {
+            opacity: 1;
+        }
+        100% {
+            width: 120%;
+            height: 120%;
+            opacity: 0;
+        }
+    }
+    @keyframes circle {
+        0% {
+            opacity: 1;
+        }
+        40% {
+            opacity: 1;
+        }
+        100% {
+            width: 120%;
+            height: 120%;
+            opacity: 0;
+        }
+    }
+    .ite{
+        font-size: 4em !important;
+        padding: 5px;
+    }
