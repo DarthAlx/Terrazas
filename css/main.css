@@ -597,7 +597,7 @@ footer{
     left: 0px !important;
     right: 0px !important;
     z-index: 4 !important;
-    
+
     padding: 30px;
 }
 
@@ -607,6 +607,8 @@ footer{
       font-family:Tahoma;
       color: #777;
       font-size: 1.5rem;
+      margin-top: 7px;
+      margin-bottom: 5px;
     }
     .iconsterraza img {
       padding: 5px;
@@ -655,7 +657,7 @@ footer{
         transform: translate(-50%, -50%);
         opacity: 0;
     }
-    .navlinks div:hover::before {
+    /*.navlinks div:hover::before {
         -webkit-animation: circle .75s;
         animation: circle .75s;
     }
@@ -684,8 +686,8 @@ footer{
             height: 120%;
             opacity: 0;
         }
-    }
+    }*/
     .ite{
-        font-size: 4em !important;
+        font-size: 2.8em !important;
         padding: 5px;
     }

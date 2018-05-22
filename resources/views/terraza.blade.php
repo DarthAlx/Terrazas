@@ -16,28 +16,28 @@
 			<a href="#galeria" class="btn btn-primary" style="position: absolute; bottom: 20px;">Ver fotos</a>
 		</div>
 		
-		<div class="container iconsterraza">
+		<div class="container iconsterraza wow bounceInLeft">
 			<div class="row">
 				<p>&nbsp;</p>
-			  	<a class="navlinks wow bounceInLeft" href="#">
+			  	<a class="navlinks" href="#">
 			  		<div class="col s6 m2 l2 offset-m2 offset-l2 company text-center">
 					  	<i class="fa fa-map-marker ite" aria-hidden="true"></i>
 					  	<p class="text-center navtext">Polanco</p>
 				  	</div>
 				</a>
-			  	<a class="navlinks wow bounceInLeft" href="#">
+			  	<a class="navlinks" href="#">
 			  		<div class="col s6 m2 l2 company text-center">
 					  	<i class="fa fa-tags ite" aria-hidden="true"></i>
 					  	<p class="text-center navtext">Terraza</p>
 				  	</div>
 				</a>
-				<a class="navlinks wow bounceInLeft" href="#">
+				<a class="navlinks" href="#">
 			  		<div class="col s6 m2 l2 company text-center">
 					  	<i class="fa fa-usd ite" aria-hidden="true"></i> 
 					  	<p class="text-center navtext">7,988</p>
 				  	</div>
 				</a>
-				<a class="navlinks wow bounceInLeft" href="#">
+				<a class="navlinks" href="#">
 			  		<div class="col s6 m2 l2 company text-center">
 					  	<i class="fa fa-users ite" aria-hidden="true"></i>
 					  	<p class="text-center navtext">50 - 100</p>
@@ -82,7 +82,7 @@
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ab temporibus, saepe mollitia tempora ratione debitis.
 					</p>
-					<div class="map">
+					<div class="map visible-xs visible-sm">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120447.76804191722!2d-99.16662403042737!3d19.36946654081599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1526928677783" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 					<hr>
@@ -97,6 +97,9 @@
 						<div class="precio">
 							<h5><strong>$399 MXN</strong> <small>por evento</small></h5>
 							<hr>
+							<div class="map">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120447.76804191722!2d-99.16662403042737!3d19.36946654081599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1526928677783" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
 							<input type="date" class="datepicker" placeholder="Fecha">
 							<button class="btn btn-primary" style="width: 100%;">Reservar</button>
 						</div>
