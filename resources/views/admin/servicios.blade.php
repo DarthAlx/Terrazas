@@ -44,7 +44,7 @@
 							<td>{{$servicio->nombre}}</td>
 							<td>{{$servicio->icono}}</td>							
 							<td>
-								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$servicio->id}}"><i class="fa fa-search-plus"></i></a>
+								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$servicio->id}}"><i class="fa fa-pencil"></i></a>
 								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$servicio->id}}"><i class="fa fa-times-circle"></i></a>
 							</td>	
 						</tr>

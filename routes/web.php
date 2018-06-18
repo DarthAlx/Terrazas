@@ -92,7 +92,7 @@ Route::group(['middleware' => 'admin'], function(){
 
 
 	Route::get('/venues', function () {
-		$venues=App\Venue::where('habilitado',1)->orderBy('nombre','asc')->get();
+		$venues=App\Venue::orderBy('nombre','asc')->get();
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();
 	    return view('admin.venues', ['venues'=>$venues,'servicios'=>$servicios]);
 	});
@@ -104,7 +104,19 @@ Route::group(['middleware' => 'admin'], function(){
 
 	Route::delete('eliminar-venue', 'VenueController@destroy');
 
-	Route::post('actualizar-venue', 'VenueController@update');
+
+	Route::get('/venue/{id}', function ($id) {
+		$venue=App\Venue::find($id);
+		$servicios=App\Servicio::orderBy('nombre','asc')->get();
+		if ($venue) {
+			return view('admin.actualizarvenue', ['servicios'=>$servicios,'venue'=>$venue]);
+		}
+		else{
+			return redirect()->intended(url('/404'));
+		}
+	    
+	});
+	Route::post('venue/{id}', 'VenueController@update');
 
 	Route::get('/servicios', function () {
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();

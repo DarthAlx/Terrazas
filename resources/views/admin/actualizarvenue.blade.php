@@ -4,7 +4,7 @@
 <div class=" main">
 	<div class="container-fluid">
 		
-		<form action="{{ url('/agregar-venue') }}" method="post" enctype="multipart/form-data">
+		<form action="{{ url('/venue') }}/{{$venue->id}}" method="post" enctype="multipart/form-data">
 			 {{ csrf_field() }}
 		<div class="row">
 			<div class="col-md-6">
@@ -40,17 +40,17 @@
 				    	<div class="col s12">
 					      <div class="row">
 					        <div class="input-field col col-md-6">
-					          <input id="nombre" name="nombre" type="text" class="validate" value="{{old('nombre')}}" required>
+					          <input id="nombre" name="nombre" type="text" class="validate" value="{{$venue->nombre or old('nombre')}}" required>
 					          <label for="nombre">Nombre</label>
 					        </div>
 					        <div class="input-field col col-md-6">
-					          <input id="zona" name="zona" type="text" class="validate" value="{{old('zona')}}" required>
+					          <input id="zona" name="zona" type="text" class="validate" value="{{$venue->zona or old('zona')}}" required>
 					          <label for="zona">Zona</label>
 					        </div>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col col-md-6">
-					          <input id="capacidad" name="capacidad" type="text" class="validate" value="{{old('capacidad')}}" required>
+					          <input id="capacidad" name="capacidad" type="text" class="validate" value="{{$venue->capacidad or old('capacidad')}}" required>
 					          <label for="capacidad">Capacidad</label>
 					        </div>
 					        <div class="input-field col col-md-4">
@@ -59,12 +59,15 @@
 					          </select>
 					          <label for="tipo">Tipo</label>
 					        </div>
+					        <script>
+					        	document.getElementByID('tipo').value="{{$venue->nombre or old('tipo')}}";
+					        </script>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col s12">
 					        	<label for="descripcion">Descripción</label>
 					        	<p>&nbsp;</p><p>&nbsp;</p>
-					          <textarea id="descripcion" name="descripcion" class="materialize-textarea" required>{{old('descripcion')}}</textarea>
+					          <textarea id="descripcion" name="descripcion" class="materialize-textarea" required>{{$venue->descripcion or old('descripcion')}}</textarea>
 					          
 					        </div>
 					      </div>
@@ -72,23 +75,23 @@
 					        <div class="input-field col s12">
 					        	<label for="direccion">Dirección</label>
 					        	<p>&nbsp;</p><p>&nbsp;</p>
-					          <textarea id="direccion" name="direccion" class="materialize-textarea" required>{{old('direccion')}}</textarea>
+					          <textarea id="direccion" name="direccion" class="materialize-textarea" required>{{$venue->direccion or old('direccion')}}</textarea>
 					          
 					        </div>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col col-md-6">
-					          <input id="latitud" name="latitud" type="text" class="validate" value="{{old('latitud')}}" required>
+					          <input id="latitud" name="latitud" type="text" class="validate" value="{{$venue->latitud or old('latitud')}}" required>
 					          <label for="latitud">Latitud</label>
 					        </div>
 					        <div class="input-field col col-md-6">
-					          <input id="longitud" name="longitud" type="text" class="validate" value="{{old('longitud')}}" required>
+					          <input id="longitud" name="longitud" type="text" class="validate" value="{{$venue->longitud or old('longitud')}}" required>
 					          <label for="longitud">Longitud</label>
 					        </div>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col col-md-6">
-					          <input id="precio" name="precio" type="text" class="validate" value="{{old('precio')}}" required>
+					          <input id="precio" name="precio" type="text" class="validate" value="{{$venue->precio or old('precio')}}" required>
 					          <label for="precio">Precio normal</label>
 					        </div>
 					        <!--div class="input-field col col-md-6">
@@ -100,7 +103,7 @@
 					        <div class="input-field col s12">
 					        	<label for="reglamento">Reglamento</label>
 					        	<p>&nbsp;</p><p>&nbsp;</p>
-					          <textarea id="reglamento" name="reglamento" class="materialize-textarea" required>{{old('reglamento')}}</textarea>
+					          <textarea id="reglamento" name="reglamento" class="materialize-textarea" required>{{$venue->reglamento or old('reglamento')}}</textarea>
 					          
 					        </div>
 					      </div>	
@@ -117,7 +120,12 @@
 							      <label for="habilitado">Habilitado</label>
 						      </p>
 					        </div>
-					        <p>&nbsp;</p>
+					        @if($venue->habilitado)
+							      <script>
+							      	$('#habilitado').prop('checked', true);
+							      </script>
+						      @endif
+						      <p>&nbsp;</p>
 
 					        <!--div class="col s4">
 					        	<div class="switch">
@@ -159,6 +167,11 @@
 					        </div>
 					      </div>
 					    @endforeach
+					    @foreach(explode(',',$venue->servicios) as $servicio)
+							<script>
+							    $('#cat{{$servicio}}').prop('checked', true);
+							</script>
+					    @endforeach
 					    @endif
 				    </div>
 
@@ -186,6 +199,13 @@
 				    <h5 >Galería</h5>
 				    <input name="poplets" type="hidden" class="popletsnum">
 				    <div class="popletsinput">
+				    	<div class="text-center">
+				    		@foreach($venue->galeria as $poplet)
+				    		<div class="img-container" style="max-width:100px; display: inline-block;">
+				    			<img src="{{url('/uploads/venues/poplets')}}/{{$venue->id}}/{{$poplet->imagen}}" alt="" class="responsive-img">
+				    		</div>
+				    		@endforeach
+				    	</div>
 				      <div class="file-field input-field poplet1">
 					      <div class="btn">
 					        <span>Subir</span>
