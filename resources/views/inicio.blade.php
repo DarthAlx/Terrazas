@@ -3,9 +3,17 @@
 
 @section('header')
 <style>
-  .headermain{
-    display: none;
+  .headerindex{
+    display: block !important;
   }
+  .headergrande{
+  	background: transparent;
+    height: 85px;
+  }
+  .nbsp{
+  	display: none;
+  }
+
 </style>
 @endsection
 @section('pagecontent')

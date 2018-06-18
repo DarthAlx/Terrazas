@@ -59,7 +59,7 @@ nav{
 }
 
 .btn, .btn:active, .btn:hover, .btn:focus{
-    color: #fff;
+    color: #000;
     text-decoration: none;
 }
 .modal {

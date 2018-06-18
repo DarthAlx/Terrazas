@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePopletsTable extends Migration
+class CreateServiciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreatePopletsTable extends Migration
      */
     public function up()
     {
-        Schema::create('poplets', function (Blueprint $table) {
+        Schema::create('servicios', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->longText('icono');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreatePopletsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('poplets');
+        Schema::dropIfExists('servicios');
     }
 }

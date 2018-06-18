@@ -57,12 +57,7 @@ Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/retorno', 'Auth\LoginController@handleProviderCallback');
 
 
-Route::get('/admin', function () {
-    return view('admin');
-})->middleware('admin');
-Route::get('/productos', function () {
-    return view('admin.productos');
-})->middleware('admin');
+
 
 
 
@@ -93,5 +88,17 @@ Route::group(['middleware' => 'admin'], function(){
 		});
 
 	Route::post('admin', 'HomeController@admin');
+
+
+
+	Route::get('/venues', function () {
+		$venues=App\Venue::where('status','Activo')->orderBy('nombre','asc')->get();
+		$servicios=App\Servicio::orderBy('nombre','asc')->get();
+	    return view('admin.venues', ['venues'=>$venues,'servicios'=>$servicios]);
+	});
+	Route::get('/servicios', function () {
+		$servicios=App\Servicio::orderBy('nombre','asc')->get();
+	    return view('admin.servicios', ['servicios'=>$servicios]);
+	});
 
 });

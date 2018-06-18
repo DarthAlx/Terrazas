@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Terrazas</title>
+        <title>Tu Lugar Ideal</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,17 +32,17 @@
         <![endif]-->
 
         <ul id="cuenta1" class="dropdown-content">
-          <li><a href="#">Entrar</a></li>
-          <li><a href="#">Registrarse</a></li>
+          <li><a href="{{ url('entrar') }}">Entrar</a></li>
+          <li><a href="{{ url('registro') }}">Registrarse</a></li>
         </ul>
         <ul id="cuenta2" class="dropdown-content">
-          <li><a href="#">Entrar</a></li>
-          <li><a href="#">Registrarse</a></li>
+          <li><a href="{{ url('entrar') }}">Entrar</a></li>
+          <li><a href="{{ url('registro') }}">Registrarse</a></li>
         </ul>
         <div class="navbar-fixed">
           <nav id="headernav" class="headergrande">
             <div class="nav-wrapper">
-              <a href="#!" class="brand-logo"><img src="{{ url('img/TERRAZAS.png') }}" alt="" class="img-responsive"></a>
+              <a href="{{ url('/') }}" class="brand-logo"><img src="{{ url('img/TERRAZAS.png') }}" alt="" class="img-responsive"></a>
               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
               <ul class="right hide-on-med-and-down nav-links">
                 <li><a href="#">Proveedores</a></li>
@@ -55,10 +55,12 @@
             </div>
           </nav>
         </div>
+        <div class="nbsp">
+        </div>
 
         
 
-        <header class="valign-wrapper headerindex">
+        <header class="valign-wrapper headerindex" style="display: none">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
@@ -71,12 +73,10 @@
                 </div>
                 </div>
               </div>
-              
             </div>
           </div>
-
         </header>
-        <div class="filter headerindex">
+        <div class="filter headerindex" style="display: none">
             <div class="container">
               <div class="row">
                 <div class="col-md-12">

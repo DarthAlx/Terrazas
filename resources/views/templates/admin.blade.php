@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Libera Espacios</title>
+        <title>Tu Lugar Ideal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap.min.css') }}" media="screen" />
         <link rel="stylesheet" type="text/css" href="{{ url('css/materialize.css') }}" media="screen" />
@@ -15,7 +15,7 @@
         <nav>
             <ul id="slide-out" class="side-nav fixed">
                 
-                    <a href="{{url('/admin')}}"><!--img src="{{url('img/logo.png')}}" class="responsive-img" alt=""-->Logo</a>
+                    <a href="{{url('/admin')}}"><img src="{{ url('img/TERRAZAS.png') }}" class="responsive-img" alt="" style="max-width: 150px;"></a>
                 
                   <li>
                     <ul class="collapsible collapsible-accordion">
@@ -24,6 +24,10 @@
                     </ul>
                   </li>
                   <li><a href="{{url('/admin')}}" class="waves-effect"><i class="fa fa-bar-chart" aria-hidden="true"></i> Escritorio</a></li>
+                  <li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li>
+                  <li><a href="{{url('/servicios')}}" class="waves-effect"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Servicios</a></li>
+                  
+                  
                 
                 <li><a href="{{url('/crm')}}" class="waves-effect"><i class="fa fa-user" aria-hidden="true"></i> CRM</a></li>
             </ul>
