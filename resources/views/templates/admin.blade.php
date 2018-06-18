@@ -63,6 +63,8 @@
         <script type="text/javascript" src="{{ url('js/vendor/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ url('js/vendor/materialize.js') }}"></script>
         <script type="text/javascript" src="{{ url('js/Chart.js') }}"></script>
+        <script type="text/javascript" src="{{ url('js/ckeditor.js') }}"></script>
+        <script type="text/javascript" src="{{ url('js/es.js') }}"></script>
 
         <script type="text/javascript" src="{{ url('js/main.js') }}"></script>
         <script>

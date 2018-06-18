@@ -16,11 +16,7 @@ class CreateGaleriaTable extends Migration
         Schema::create('galeria', function (Blueprint $table) {
             $table->increments('id');
             $table->bigInteger('venue_id');
-            $table->longText('imagen1');
-            $table->longText('imagen2')->nullable(true);
-            $table->longText('imagen3')->nullable(true);
-            $table->longText('imagen4')->nullable(true);
-            $table->longText('imagen5')->nullable(true);
+            $table->longText('imagen');
             $table->timestamps();
         });
     }

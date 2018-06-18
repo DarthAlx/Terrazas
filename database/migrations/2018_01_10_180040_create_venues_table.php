@@ -22,11 +22,12 @@ class CreateVenuesTable extends Migration
             $table->string('longitud');
             $table->string('zona');
             $table->integer('precio');
-            $table->integer('precio_especial');
+            $table->longText('imagen');
             $table->integer('capacidad');
             $table->longText('reglamento');
             $table->string('servicios');
             $table->string('tipo');
+            $table->boolean('habilitado')->default(true);
             $table->timestamps();
         });
     }

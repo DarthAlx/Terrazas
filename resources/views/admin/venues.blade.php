@@ -7,11 +7,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6">
-				<h3 class="">Servicios</h3>
+				<h3 class="">Lugares</h3>
 			</div>
 			<div class="col-md-6 text-right valign-wrapper" style="justify-content: space-between;">
 				<div class="text-center" style="margin-left: auto; margin-top: 20px;">
-					<a href="#nuevo" class="btn right waves-effect waves-light btn-large modal-trigger">Añadir nuevo</a>
+					<a href="{{url('/venues/nuevo')}}" class="btn btn-primary right waves-effect waves-light btn-large">Añadir nuevo</a>
 				</div>
 				
 			</div>
@@ -27,26 +27,32 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="adv-table table-responsive">
-					
-					
 			  <table class="display table table-bordered table-striped table-hover" id="dynamic-table">
 			  <thead>
 			  	<tr>
 					<th>Nombre</th>
-			      	<th>Icono</th>			      	
-			      	<th></th>
+			      	<th>Zona</th>
+			      	<th>Precio</th>
+			      	<th>Capacidad</th>
+					<th>Tipo</th>
+					<th></th>
 			  	</tr>
 			  </thead>
 			  <tbody>
-			  	@if($servicios)
-			  		@foreach($servicios as $servicio)
+			  	@if($venues)
+			  		@foreach($venues as $venue)
+
 						<tr>
-							<td>{{$servicio->nombre}}</td>
-							<td>{{$servicio->icono}}</td>							
+							<td>{{$venue->nombre}}</td>
+							<td>{{$venue->zona}}</td>
+							<td>{{$venue->precio}}</td>
+							<td>{{$venue->capacidad}}</td>
+							<td>{{$venue->tipo}}</td>
 							<td>
-								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$servicio->id}}"><i class="fa fa-search-plus"></i></a>
-								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$servicio->id}}"><i class="fa fa-times-circle"></i></a>
+								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$venue->id}}"><i class="fa fa-search-plus"></i></a>
+								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$venue->id}}"><i class="fa fa-times-circle"></i></a>
 							</td>	
+
 						</tr>
 					@endforeach
 				@else
@@ -54,6 +60,9 @@
 						<td></td>
 						<td></td>
 						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>						
 					</tr>
 
 				@endif
@@ -64,15 +73,15 @@
 			  </tbody>
 			  <tfoot>
 			  	<tr>
-			  		
 			      	<th>Nombre</th>
-			      	<th>Icono</th>			      	
-			      	<th></th>
+			      	<th>Zona</th>
+			      	<th>Precio</th>
+			      	<th>Capacidad</th>
+					<th>Tipo</th>
+					<th></th>
 			  	</tr>
-
 			  </tfoot>
 			  </table>
-			  
 
 			  </div>
 			</div>
