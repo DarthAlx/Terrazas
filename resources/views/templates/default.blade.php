@@ -99,15 +99,20 @@
                       </div>
                       <div class="form-group">
                         <label for="cuanto">¿Cuant@s?</label>
-                        <input type="email" class="form-control browser-default" id="cuanto" placeholder="No. de personas">
+                        <input type="number" class="form-control browser-default" id="cuanto" placeholder="No. de personas">
                       </div>
                       <div class="form-group">
                         <label for="que">¿Qué?</label>
-                        <input type="email" class="form-control browser-default" id="que" placeholder="Terraza">
+                        <select name="" id="que" class="form-control browser-default">
+                          <option value="">Selecciona</option>
+                          <option value="Salón">Salón</option>
+                          <option value="Terraza">Terraza</option>
+                          <option value="Jardín">Jardín</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label for="">&nbsp;</label>
-                        <button type="submit" class="btn btn-default">Buscar</button>
+                        <button type="submit" class="btn btn-default" style="color: #fff">Buscar</button>
                       </div>
                       
                     </form>

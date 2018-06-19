@@ -56,7 +56,10 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/retorno', 'Auth\LoginController@handleProviderCallback');
 
-
+Route::get('/lugares', function () {
+	$lugares=App\Venue::where('habilitado',1)->orderBy('nombre','asc')->get();
+    return view('lugares',['lugares'=>$lugares]);
+});
 
 
 

@@ -119,7 +119,7 @@
 					        </div>
 					        <p>&nbsp;</p>
 
-					        <!--div class="col s4">
+					        <div class="col s4">
 					        	<div class="switch">
 								    <label>
 								      <input type="checkbox" name="destacado" id="destacado"/>
@@ -130,7 +130,7 @@
 					          <p>      
 							      <label for="destacado">Destacado</label>
 						      </p>
-					        </div-->
+					        </div>
 
 
 
