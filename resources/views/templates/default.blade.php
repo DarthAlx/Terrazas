@@ -88,22 +88,28 @@
                     </p>
                   </div>
                   <h5 class="text-center" id="reservaciones">RESERVACIONES</h5>
-                    <form class="form-inline">
+                    <form action="{{url('lugares')}}" method="get" enctype="" class="form-inline">
+                      {{csrf_field()}}
                       <div class="form-group">
                         <label for="donde">¿Dónde?</label>
-                        <input type="email" class="form-control browser-default" id="donde" placeholder="Lugar">
+                        <select name="donde" id="donde" class="form-control browser-default">
+                          <option value="">Selecciona</option>
+                          <option value="Polanco">Polanco</option>
+                          <option value="Santa Fe">Santa Fe</option>
+                          <option value="Interlomas">Interlomas</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label for="cuando">¿Cuándo?</label>
-                        <input type="text" class="form-control browser-default datepicker" id="cuando" placeholder="Fecha">
+                        <input name="cuando" type="text" class="form-control browser-default datepicker" id="cuando" placeholder="Fecha">
                       </div>
                       <div class="form-group">
                         <label for="cuanto">¿Cuant@s?</label>
-                        <input type="number" class="form-control browser-default" id="cuanto" placeholder="No. de personas">
+                        <input name="cuantos" type="number" class="form-control browser-default" id="cuanto" placeholder="No. de personas">
                       </div>
                       <div class="form-group">
                         <label for="que">¿Qué?</label>
-                        <select name="" id="que" class="form-control browser-default">
+                        <select name="que" id="que" class="form-control browser-default">
                           <option value="">Selecciona</option>
                           <option value="Salón">Salón</option>
                           <option value="Terraza">Terraza</option>

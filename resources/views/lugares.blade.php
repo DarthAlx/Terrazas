@@ -25,42 +25,20 @@
 				</div>
 				<div class="col-md-9 col-sm-8 col-xs-12">
 					<div class="row">
+						@foreach($lugares as $venue)
 						<div class="col-md-4 col-sm-4 col-xs-6">
 							<div class="terraza-small">
 								<a href="{{url('/terraza')}}" class="link-wrapper">
-									<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+									<img src="{{url('/uploads/venues')}}/{{$venue->imagen}}" class="img-responsive" alt="">
 									<div class="title-wrapper">
 										<a href="#" class="title">
-											Terraza 3
+											{{$venue->nombre}}
 										</a>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-6">
-							<div class="terraza-small">
-								<a href="{{url('/terraza')}}" class="link-wrapper">
-									<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-									<div class="title-wrapper">
-										<a href="#" class="title">
-											Terraza 3
-										</a>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-6">
-							<div class="terraza-small">
-								<a href="{{url('/terraza')}}" class="link-wrapper">
-									<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-									<div class="title-wrapper">
-										<a href="#" class="title">
-											Terraza 3
-										</a>
-									</div>
-								</a>
-							</div>
-						</div>					
+						@endforeach				
 					</div>
 				</div>
 			</div>

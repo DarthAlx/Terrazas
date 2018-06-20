@@ -241,5 +241,37 @@ class VenueController extends Controller
 
 
 
+
+    public function buscar(Request $request){
+       // dd($request->input('cuantos', "0"));
+        /*if($request->cuantos){
+            $cuantos=$request->cuantos;
+        } 
+        else {
+            $cuantos=999999999;
+        }
+        
+        if($request->donde){
+            $donde=$request->donde;
+        } 
+        else {
+            $donde='';
+        }
+        if($request->que){
+            $que=$request->que;
+        } 
+        else {
+            $que='';
+        }
+*/
+
+        $lugares=Venue::tipo($request->get('que'))->zona($request->get('donde'))->capacidad($request->get('cuantos'))->orderBy('nombre','asc')->get();
+        return view('lugares',['lugares'=>$lugares]);
+    }
+
+
+
+
+
     
 }

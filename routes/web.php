@@ -61,6 +61,7 @@ Route::get('/lugares', function () {
     return view('lugares',['lugares'=>$lugares]);
 });
 
+Route::get('lugares', 'VenueController@buscar');
 
 
 
