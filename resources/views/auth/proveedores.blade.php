@@ -11,32 +11,29 @@
                     <div class="board-inner">
                     <ul class="nav nav-tabs" id="myTab">
                     <div class="liner"></div>
+                    <li>
+                      <a href="#profile" data-toggle="tab" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Información personal">
+                      <span class="round-tabs one" style="background:  transparent; color: transparent; border: 0">
+                              &nbsp;
+                      </span> 
+                      </a>
+                      </li>
                      <li class="active">
-                     <a href="#profile" data-toggle="tab" title="welcome">
+                     <a href="#profile" data-toggle="tab" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Información personal">
                       <span class="round-tabs one">
                               <i class="glyphicon glyphicon-user"></i>
                       </span> 
                   </a></li>
 
-                  <li><a href="#home" data-toggle="tab" title="home">
+                  <li><a href="#home" data-toggle="tab"  class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Lugar">
                      <span class="round-tabs two">
                          <i class="glyphicon glyphicon-home"></i>
                      </span> 
            </a>
                  </li>
-                 <li><a href="#messages" data-toggle="tab" title="bootsnipp goodies">
-                     <span class="round-tabs three">
-                          <i class="glyphicon glyphicon-gift"></i>
-                     </span> </a>
-                     </li>
+                 
 
-                     <li><a href="#settings" data-toggle="tab" title="blah blah">
-                         <span class="round-tabs four">
-                              <i class="glyphicon glyphicon-comment"></i>
-                         </span> 
-                     </a></li>
-
-                     <li><a href="#doner" data-toggle="tab" title="completed">
+                     <li><a href="#finalizar" data-toggle="tab" title="Finalizar">
                          <span class="round-tabs five">
                               <i class="glyphicon glyphicon-ok"></i>
                          </span> </a>
@@ -80,68 +77,65 @@
                                   <input type="checkbox" id="terminosycondiciones" required/>
                                   <label for="terminosycondiciones">Acepto los <a href="#">términos y condiciones</a>.</label>
                                 </p>
+                                <a class="btn btn-primary right" href="#home" data-toggle="tab">Siguiente</a>
                             </div>
                         
                       </div>
                       <div class="tab-pane fade" id="home">
                           <div class="step">
                               <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     
 
-                                        <h5>Detalles</h5>
+                                        <h3 class="head text-center">Lugar</h3>
 
                                             <div class="col s12">
-                                              <div class="row">
-                                                <div class="md-form input-field col-md-6">
+                                             
+                                                <div class="md-form input-field ">
                                                   <input id="nombre" name="nombre" type="text" class="validate" value="{{old('nombre')}}" required>
                                                   <label for="nombre">Nombre</label>
                                                 </div>
-                                                <div class="md-form input-field col-md-6">
+                                                <div class="md-form input-field ">
                                                   <input id="zona" name="zona" type="text" class="validate" value="{{old('zona')}}" required>
                                                   <label for="zona">Zona</label>
                                                 </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="md-form input-field col-md-6">
+                                              
+                                              
+                                                <div class="md-form input-field ">
                                                   <input id="capacidad" name="capacidad" type="text" class="validate" value="{{old('capacidad')}}" required>
                                                   <label for="capacidad">Capacidad</label>
                                                 </div>
-                                                <div class="md-form input-field col-md-4">
+                                                <div class="md-form input-field ">
                                                   <select name="tipo" id="tipo" class="select" required>
                                                     <option value="Terraza">Terraza</option>
                                                   </select>
                                                   <label for="tipo">Tipo</label>
                                                 </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="input-field s12">
-                                                    <label for="descripcion">Descripción</label>
-                                                    <p>&nbsp;</p><p>&nbsp;</p>
+                                              
+                                                <div class="input-field">
+
                                                   <textarea id="descripcion" name="descripcion" class="materialize-textarea" required>{{old('descripcion')}}</textarea>
+                                                  <label for="descripcion">Descripción</label>
                                                   
                                                 </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="input-field s12">
-                                                    <label for="direccion">Dirección</label>
-                                                    <p>&nbsp;</p><p>&nbsp;</p>
+                                              
+                                                <div class="input-field">
+
                                                   <textarea id="direccion" name="direccion" class="materialize-textarea" required>{{old('direccion')}}</textarea>
+                                                  <label for="direccion">Dirección</label>
                                                   
                                                 </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="input-field col-md-6">
+                                              
+                                                <div class="input-field">
                                                   <input id="latitud" name="latitud" type="text" class="validate" value="{{old('latitud')}}" required>
                                                   <label for="latitud">Latitud</label>
                                                 </div>
-                                                <div class="input-field col-md-6">
+                                                <div class="input-field">
                                                   <input id="longitud" name="longitud" type="text" class="validate" value="{{old('longitud')}}" required>
                                                   <label for="longitud">Longitud</label>
                                                 </div>
-                                              </div>
-                                              <div class="row">
-                                                <div class="input-field col-md-6">
+                                              
+                                                <div class="input-field">
                                                   <input id="precio" name="precio" type="text" class="validate" value="{{old('precio')}}" required>
                                                   <label for="precio">Precio normal</label>
                                                 </div>
@@ -149,17 +143,15 @@
                                                   <input id="precio_especial" namee="precio_especial" type="text" value="{{old('precio_especial')}}" class="validate">
                                                   <label for="precio_especial">Precio rebajado</label>
                                                 </div-->
-                                              </div>
-                                              <div class="row">
-                                                <div class="input-field s12">
-                                                    <label for="reglamento">Reglamento</label>
-                                                    <p>&nbsp;</p><p>&nbsp;</p>
+                                              
+                                                <div class="input-field">
+
                                                   <textarea id="reglamento" name="reglamento" class="materialize-textarea" required>{{old('reglamento')}}</textarea>
+                                                  <label for="reglamento">Reglamento</label>
                                                   
                                                 </div>
-                                              </div>    
-                                              <div class="row">
-                                                <div class="col s4">
+                                              
+                                                <!--div class="col s4">
                                                     <div class="switch">
                                                         <label>
                                                           <input type="checkbox" name="habilitado" id="habilitado" checked="checked"/>
@@ -170,10 +162,10 @@
                                                   <p>      
                                                       <label for="habilitado">Habilitado</label>
                                                   </p>
-                                                </div>
-                                                <p>&nbsp;</p>
+                                                </div-->
+                                               
 
-                                                <div class="col s4">
+                                                <!--div class="col s4">
                                                     <div class="switch">
                                                         <label>
                                                           <input type="checkbox" name="destacado" id="destacado"/>
@@ -184,12 +176,12 @@
                                                   <p>      
                                                       <label for="destacado">Destacado</label>
                                                   </p>
-                                                </div>
+                                                </div-->
 
 
 
 
-                                              </div>
+                                              
                                               
                                             </div>
 
@@ -197,10 +189,12 @@
                                     
                                 
                                 </div>
+                                </div>
+                                <div class="row">
 
-                                <div class="col-md-4">
+                                <div class="col-md-12">
 
-                                        <h5>Catálogos</h5>
+                                        <h5>Servicios</h5>
                                         <div>
                                             @if($servicios)
                                             @foreach($servicios as $servicio)
@@ -319,38 +313,25 @@
 
                                 </div>
                             </div>
+                            <a class="btn btn-primary right" href="#finalizar" data-toggle="tab">Siguiente</a>
                           </div>
                           
                       </div>
-                      <div class="tab-pane fade" id="messages">
-                          <h3 class="head text-center">Bootsnipp goodies</h3>
+                      
+                      
+                      <div class="tab-pane fade" id="finalizar">
+                          <div class="text-center">
+                            <i class="img-intro icon-checkmark-circle"></i>
+                        </div>
+                        <div class="step">
+                          <h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
                           <p class="narrow text-center">
-                              Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                            Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
                           </p>
-                          
-                          <p class="text-center">
-                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                </p>
-                      </div>
-                      <div class="tab-pane fade" id="settings">
-                          <h3 class="head text-center">Drop comments!</h3>
-                          <p class="narrow text-center">
-                              Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-                          </p>
-                          
-                          <p class="text-center">
-                    <a href="" class="btn btn-success btn-outline-rounded green"> start using bootsnipp <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
-                </p>
-                      </div>
-                      <div class="tab-pane fade" id="doner">
-  <div class="text-center">
-    <i class="img-intro icon-checkmark-circle"></i>
-</div>
-<h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
-<p class="narrow text-center">
-  Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
-</p>
-</div>
+                          <a class="btn btn-primary right" href="#home" data-toggle="tab">Finalizar</a>
+                        </div>
+                        
+                        </div>
 <div class="clearfix"></div>
 </div>
 
