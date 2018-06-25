@@ -178,6 +178,9 @@
                     ampmclickable: true
                     
                   });
+            $(function(){
+              $('a[title]').tooltip();
+            });
 
             
 
