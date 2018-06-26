@@ -84,6 +84,8 @@ class RegisterController extends Controller
             'avatar' => $data['avatar'],
             'token' => md5(uniqid(rand(), true)),
             'empresa' => $data['empresa'],
+            'habilitado' => $data['habilitado'],
+            'role' => $data['role'],
         ]);
         }
         else{
@@ -96,6 +98,8 @@ class RegisterController extends Controller
             'genero' => $data['genero'],
             'token' => md5(uniqid(rand(), true)),
             'empresa' => $data['empresa'],
+            'habilitado' => $data['habilitado'],
+            'role' => $data['role'],
             ]);
         }
         

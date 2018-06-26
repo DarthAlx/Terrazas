@@ -1,9 +1,17 @@
 @extends('templates.default')
 
 @section('pagecontent')
+<div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          @include('snip.notificaciones')
+</div>
 
+</div>
 
-<section style="background:#efefe9;">
+    </div>
+
+<section >
         <div class="container">
             <div class="row">
                 <div class="board">
@@ -40,8 +48,9 @@
                      </li>
                      
                      </ul></div>
-
+                    <form action="{{url('nuevo-proveedor')}}" method="post" enctype="">
                      <div class="tab-content">
+                      
                       <div class="tab-pane fade in active" id="profile">
                             <div class="step">
                                 <h3 class="head text-center">Información personal</h3>
@@ -320,20 +329,21 @@
                       
                       
                       <div class="tab-pane fade" id="finalizar">
-                          <div class="text-center">
-                            <i class="img-intro icon-checkmark-circle"></i>
-                        </div>
+                         
                         <div class="step">
-                          <h3 class="head text-center">thanks for staying tuned! <span style="color:#f48260;">♥</span> Bootstrap</h3>
+                          <h3 class="head text-center">Completar registro</h3>
                           <p class="narrow text-center">
-                            Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim.
+                            Tu registro será enviado a nuestros administradores para su aprobación.
                           </p>
-                          <a class="btn btn-primary right" href="#home" data-toggle="tab">Finalizar</a>
+                          <button class="btn btn-primary right" type="submit">Finalizar</button>
                         </div>
                         
                         </div>
-<div class="clearfix"></div>
-</div>
+                      <div class="clearfix"></div>
+
+                      
+                  </div>
+                  </form>
 
 </div>
 </div>

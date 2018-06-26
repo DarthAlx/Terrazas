@@ -68,7 +68,7 @@ Route::get('/nuevo-proveedor', function () {
 	$servicios=App\Servicio::orderBy('nombre','asc')->get();
     return view('auth.proveedores', ['servicios'=>$servicios]);
 });
-
+Route::post('nuevo-proveedor', 'ProveedoresController@store');
 
 
 

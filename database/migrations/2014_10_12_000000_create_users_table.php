@@ -19,14 +19,16 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password', 60)->default('face_account');
-            $table->date('dob');
+            $table->date('dob')->nullable(true);
             $table->string('tel');
-            $table->string('genero');
+            $table->string('genero')->nullable(true);
             $table->string('avatar')->default(url('/img/dummy.png'));
             $table->string('empresa')->nullable(true);
             $table->string('token');
             $table->boolean('is_admin')->default(false);
+            $table->enum('role',['usuario', 'proveedor', 'admin'])->default('usuario');
             $table->string('status')->default('Pendiente');
+            $table->boolean('habilitado')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
