@@ -29,6 +29,7 @@ class CreateVenuesTable extends Migration
             $table->string('tipo');
             $table->boolean('habilitado')->default(true);
             $table->boolean('destacado')->default(false);
+            $table->bigInteger('user_id');
             $table->timestamps();
         });
     }

@@ -20,12 +20,8 @@ Route::get('/', function () {
 
 
 Route::get('/perfil', function () {
-	if (Auth::user()->status=="Activo") {
 		dd("Perfil de usuario");
-	}
-	else{
-		dd("Cuenta no activada");
-	}
+
 })->middleware('auth');
 
 Route::get('activacion/{token}/{email}', 'HomeController@activacion');
@@ -137,5 +133,10 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::delete('eliminar-servicio', 'ServicioController@destroy');
 
 	Route::post('actualizar-servicio', 'ServicioController@update');
+
+	Route::get('/peticiones', function () {
+		$peticiones=App\Venue::where('habilitado',0)->orderBy('nombre','asc')->get();
+	    return view('admin.peticiones', ['peticiones'=>$peticiones]);
+	});
 
 });

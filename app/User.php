@@ -36,4 +36,7 @@ class User extends Authenticatable
     {
         $this->notify(new RecuperaciónDeContraseña($token));
     }
+    public function venues(){
+        return $this->hasMany('App\Venue');
+    }
 }

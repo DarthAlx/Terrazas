@@ -12,6 +12,9 @@ class Venue extends Model
 	public function galeria(){
 	    return $this->hasMany('App\Galeria');
 	}
+	public function user(){
+	    return $this->belongsTo('App\User');
+	}
 	public function scopeTipo($query, $tipo){
 		if (trim($tipo)!="") {
 			$query->where('tipo', $tipo);
