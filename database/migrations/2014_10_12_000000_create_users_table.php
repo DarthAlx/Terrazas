@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('genero')->nullable(true);
             $table->string('avatar')->default(url('/img/dummy.png'));
             $table->string('empresa')->nullable(true);
-            $table->string('token');
+            $table->string('token')->nullable(true);
             $table->boolean('is_admin')->default(false);
             $table->enum('role',['usuario', 'proveedor', 'admin'])->default('usuario');
             $table->string('status')->default('Pendiente');

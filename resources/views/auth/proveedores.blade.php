@@ -48,7 +48,7 @@
                      </li>
                      
                      </ul></div>
-                    <form action="{{url('nuevo-proveedor')}}" method="post" enctype="">
+                    <form action="{{url('nuevo-proveedor')}}" method="post" enctype="multipart/form-data">
                      <div class="tab-content">
                       
                       <div class="tab-pane fade in active" id="profile">
@@ -58,20 +58,20 @@
 
                                 <!--Body-->
                                 <div class="md-form input-field">
-                                    <input type="text" name="name" id="nombre" class="form-control" value="" required>
+                                    <input type="text" name="name" id="nombre" class="form-control" value="{{old('name')}}" required>
                                     <label for="nombre"><i class="fa fa-user-o grey-text fa-lg"></i> Nombre completo</label>
                                 </div>
                                 <div class="md-form input-field">
                                     
-                                    <input type="email" name="email" id="email" class="form-control" value="" required>
+                                    <input type="email" name="email" id="email" class="form-control" value="{{old('email')}}" required>
                                     <label for="email"><i class="fa fa-envelope-o grey-text fa-lg"></i> Email</label>
                                 </div>
                                 <div class="md-form input-field">
-                                    <input type="text" name="empresa" id="empresa" class="form-control">
+                                    <input type="text" name="empresa" id="empresa" class="form-control" value="{{old('empresa')}}">
                                     <label for="empresa"><i class="fa fa-building grey-text fa-lg"></i> Empresa</label>
                                 </div>
                                 <div class="md-form input-field">
-                                    <input type="text" name="tel" id="tel" class="form-control" required>
+                                    <input type="text" name="tel" id="tel" class="form-control" value="{{old('tel')}}" required>
                                     <label for="tel"><i class="fa fa-phone grey-text fa-lg"></i> Teléfono</label>
                                 </div>
                                 <div class="md-form input-field">  

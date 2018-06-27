@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Session;
 use App\Venue;
 use App\User;
 use App\Servicio;
+use App\Galeria;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProveedoresController extends Controller
 {
@@ -27,9 +30,6 @@ class ProveedoresController extends Controller
             Session::flash('class', 'danger');
             return redirect()->intended(url()->previous())->withInput();
         }
-
-		
-       
         if ($request->hasFile('imagen')) {
           $file = $request->file('imagen');
           if ($file->getClientOriginalExtension()=="jpg" || $file->getClientOriginalExtension()=="png") {
@@ -41,6 +41,7 @@ class ProveedoresController extends Controller
 
 
           else{
+
             Session::flash('mensaje', 'El archivo no es una imagen valida.');
             Session::flash('class', 'danger');
             return redirect()->intended(url()->previous())->withInput();
