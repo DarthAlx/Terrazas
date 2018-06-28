@@ -19,7 +19,14 @@ class UsuariosSeeder extends Seeder
             'tel'=>'5549293724',
             'genero'=>'Masculino',
             'token'=>bcrypt('alx.morales@outlook.com'),
-            'is_admin' =>true
+            'is_admin' =>true,
+            'habilitado'=>true,
+            'role'=>'admin'
+        ]);
+
+        DB::table('servicios')->insert([
+            'nombre'=>'Baños',
+            'icono'=>'<i class="fa fa-male" aria-hidden="true"></i><i class="fa fa-female" aria-hidden="true"></i>',
         ]);
     }
 }
