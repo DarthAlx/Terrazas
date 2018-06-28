@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ url('js/data-tables/DT_bootstrap.css') }}" />
 @endsection
 @section('pagecontent')
+
 <div class=" main">
 	<div class="container-fluid">
 		<div class="row">
@@ -53,7 +54,7 @@
 							<td>{{$peticion->capacidad}}</td>
 							<td>{{$peticion->tipo}}</td>
 							<td>
-								<a class="waves-effect waves-light btn modal-trigger" href="{{url('peticion')}}/{{$peticion->id}}"><i class="fa fa-search-plus"></i></a>
+								<a class="waves-effect waves-light btn modal-trigger" href="#view{{$peticion->id}}"><i class="fa fa-search-plus"></i></a>
 								<a class="waves-effect waves-light btn green modal-trigger" href="{{url('peticion')}}/{{$peticion->id}}"><i class="fa fa-check"></i></a>
 								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$peticion->id}}"><i class="fa fa-times-circle"></i></a>
 							</td>	
@@ -109,6 +110,102 @@
 	    <div class="modal-content">
 	      <h4>Eliminar lugar ({{$peticion->nombre}})</h4>
 	      <p>¿Está seguro que desea eliminar este lugar?</p>
+
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn" style="float: right;">Cancelar</a> 
+			<form action="{{ url('/eliminar-peticion') }}" method="post" enctype="multipart/form-data">
+				{{ method_field('DELETE') }}
+				{!! csrf_field() !!}
+				<input type="hidden" name="eliminar" value="{{$peticion->id}}" style="float: right;">
+				<input type="submit" class="modal-action modal-close waves-effect waves-green red btn" value="Eliminar" style="float: right;">
+			</form>
+			<p>	&nbsp;</p>
+	    </div>
+
+
+	  </div>
+
+
+
+	  <div id="view{{$peticion->id}}" class="modal">
+	    <div class="modal-content">
+	      <h4>{{$peticion->nombre}}</h4>
+	      <p>Detalles de la peticion</p>
+
+	      <div class="table-responsive">
+	      	<table class="table">
+	      		<thead>
+				    <tr>
+				      <th>Detalle</th>
+				      <th>Descripción</th>
+				    </tr>
+				  </thead>
+				<tbody>
+					<tr>
+				      <th>Nombre del usuario</th>
+				      <td>{{$peticion->user->name}}</td>
+				    </tr>
+				    <tr>
+				      <th>Email</th>
+				      <td>{{$peticion->user->email}}</td>
+				    </tr>
+				    <tr>
+				      <th>Teléfono</th>
+				      <td>{{$peticion->user->tel}}</td>
+				    </tr>
+				    <tr>
+				      <th>Nombre del lugar</th>
+				      <td>{{$peticion->nombre}}</td>
+				    </tr>
+				    <tr>
+				      <th>Descripción</th>
+				      <td>{{$peticion->descripcion}}</td>
+				    </tr>
+				    <tr>
+				      <th>Latitud</th>
+				      <td>{{$peticion->latitud}}</td>
+				    </tr>
+				    <tr>
+				      <th>Longitud</th>
+				      <td>{{$peticion->longitud}}</td>
+				    </tr>
+				    <tr>
+				      <th>Zona</th>
+				      <td>{{$peticion->zona}}</td>
+				    </tr>
+				    <tr>
+				      <th>Precio promedio</th>
+				      <td>{{$peticion->precio}}</td>
+				    </tr>
+				    <tr>
+				      <th>Capacidad</th>
+				      <td>{{$peticion->capacidad}}</td>
+				    </tr>
+				    <tr>
+				      <th>Reglamento</th>
+				      <td>{{$peticion->reglamento}}</td>
+				    </tr>
+				    <tr>
+				      <th>Tipo</th>
+				      <td>{{$peticion->tipo}}</td>
+				    </tr>
+				    <tr>
+				      <th>Servicios</th>
+				      <?php $servicios=explode(",", $peticion->servicios); ?>
+				      <td>
+				      	@foreach($servicios as $servicio)
+				      	<?php $serv=App\Servicio::find($servicio); ?>
+				      
+				      	{!!$serv->icono!!}{{$serv->nombre}}<br>
+				      	@endforeach
+				      </td>
+				    </tr>
+				    <tr>
+				      <th>Imágen</th>
+				      <td><img src="{{url('uploads/venues')}}/{{$peticion->imagen}}" style="max-width: 150px;" alt=""></td>
+				    </tr>
+				</tbody>
+	      	</table>
+	      </div>	
 
 	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn" style="float: right;">Cancelar</a> 
 			<form action="{{ url('/eliminar-peticion') }}" method="post" enctype="multipart/form-data">
