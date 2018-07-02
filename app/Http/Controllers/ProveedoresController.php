@@ -121,4 +121,25 @@ class ProveedoresController extends Controller
         }
     	
     }
+    public function destroy(Request $request){
+      $venue = Venue::find($request->eliminar);
+      $user=$venue->user;
+      $user->delete();
+      $venue->delete();
+      Session::flash('mensaje', 'Peticion eliminada con éxito.');
+        Session::flash('class', 'success');
+        return redirect()->intended(url('/peticiones/'))->withInput();
+    }
+
+    public function accept(Request $request){
+      $venue = Venue::find($request->aceptar);
+      $user=$venue->user;
+      $user->habilitado=1;
+      $venue->habilitado=1;
+      $user->save();
+      $venue->save();
+      Session::flash('mensaje', 'Peticion aceptada con éxito.');
+        Session::flash('class', 'success');
+        return redirect()->intended(url('/peticiones/'))->withInput();
+    }
 }

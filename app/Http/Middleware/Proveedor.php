@@ -6,7 +6,8 @@ use Closure;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-class Admin
+
+class Proveedor
 {
     /**
      * Handle an incoming request.
@@ -22,7 +23,7 @@ class Admin
           }
           else  {
             $usuario=User::find(Auth::user()->id);
-            if ($usuario->role!="admin") {
+            if ($usuario->role!="proveedor") {
               Session::flash('mensaje', 'No tienes permisos para ver esta página');
               Session::flash('class', 'warning');
               return redirect()->intended(url('/404'));

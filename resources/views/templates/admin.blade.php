@@ -23,9 +23,16 @@
                       
                     </ul>
                   </li>
-                  <li><a href="{{url('/admin')}}" class="waves-effect"><i class="fa fa-bar-chart" aria-hidden="true"></i> Escritorio</a></li>
-                  <li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li>
-                  <li><a href="{{url('/servicios')}}" class="waves-effect"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Servicios</a></li>
+                  @if(Auth::user()->role=="admin")
+                    <li><a href="{{url('/admin')}}" class="waves-effect"><i class="fa fa-bar-chart" aria-hidden="true"></i> Escritorio</a></li>
+                    <!--li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li-->
+                    <li><a href="{{url('/peticiones')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Peticiones</a></li>
+                    <li><a href="{{url('/servicios')}}" class="waves-effect"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Servicios</a></li>
+                  @endif
+
+                  @if(Auth::user()->role=="admin")
+                    <li><a href="{{url('/lugares')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li>
+                  @endif
                   
                   
                 

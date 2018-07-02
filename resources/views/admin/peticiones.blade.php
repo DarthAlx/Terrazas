@@ -55,7 +55,7 @@
 							<td>{{$peticion->tipo}}</td>
 							<td>
 								<a class="waves-effect waves-light btn modal-trigger" href="#view{{$peticion->id}}"><i class="fa fa-search-plus"></i></a>
-								<a class="waves-effect waves-light btn green modal-trigger" href="{{url('peticion')}}/{{$peticion->id}}"><i class="fa fa-check"></i></a>
+								<a class="waves-effect waves-light btn green modal-trigger" href="#accept{{$peticion->id}}"><i class="fa fa-check"></i></a>
 								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$peticion->id}}"><i class="fa fa-times-circle"></i></a>
 							</td>	
 
@@ -117,6 +117,25 @@
 				{!! csrf_field() !!}
 				<input type="hidden" name="eliminar" value="{{$peticion->id}}" style="float: right;">
 				<input type="submit" class="modal-action modal-close waves-effect waves-green red btn" value="Eliminar" style="float: right;">
+			</form>
+			<p>	&nbsp;</p>
+	    </div>
+
+
+	  </div>
+
+
+	  <div id="accept{{$peticion->id}}" class="modal">
+	    <div class="modal-content">
+	      <h4>Aceptar lugar ({{$peticion->nombre}})</h4>
+	      <p>¿Está seguro que desea dar de alta este lugar?</p>
+
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn" style="float: right;">Cancelar</a> 
+			<form action="{{ url('/aceptar-peticion') }}" method="post" enctype="multipart/form-data">
+				{{ method_field('DELETE') }}
+				{!! csrf_field() !!}
+				<input type="hidden" name="aceptar" value="{{$peticion->id}}" style="float: right;">
+				<input type="submit" class="modal-action modal-close waves-effect waves-green green btn" value="Aceptar" style="float: right;">
 			</form>
 			<p>	&nbsp;</p>
 	    </div>

@@ -45,11 +45,11 @@
               <a href="{{ url('/') }}" class="brand-logo"><img src="{{ url('img/TERRAZAS.png') }}" alt="" class="img-responsive"></a>
               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars"></i></a>
               <ul class="right hide-on-med-and-down nav-links">
-                <li><a href="#">Proveedores</a></li>
+                <li><a href="{{ url('/nuevo-proveedor') }}">Proveedores</a></li>
                 <li><a class="dropdown-button" href="#" data-activates="cuenta1">Mi perfil</a></li>
               </ul>
               <ul class="side-nav" id="mobile-demo">
-                <li><a href="#">Proveedores</a></li>
+                <li><a href="{{ url('/nuevo-proveedor') }}">Proveedores</a></li>
                 <li><a class="dropdown-button" href="#" data-activates="cuenta2">Mi perfil</a></li>
               </ul>
             </div>

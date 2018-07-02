@@ -66,7 +66,13 @@ Route::get('/nuevo-proveedor', function () {
 });
 Route::post('nuevo-proveedor', 'ProveedoresController@store');
 
+Route::group(['middleware' => 'proveedor'], function(){
 
+	Route::get('/panel', function () {
+		return view('admin.panel');
+	}); 
+
+});
 
 Route::group(['middleware' => 'admin'], function(){
 	Route::get('/crm', function () {
@@ -138,5 +144,6 @@ Route::group(['middleware' => 'admin'], function(){
 		$peticiones=App\Venue::where('habilitado',0)->orderBy('nombre','asc')->get();
 	    return view('admin.peticiones', ['peticiones'=>$peticiones]);
 	});
-
+	Route::delete('eliminar-peticion', 'ProveedoresController@destroy');
+	Route::post('aceptar-peticion', 'ProveedoresController@accept');
 });
