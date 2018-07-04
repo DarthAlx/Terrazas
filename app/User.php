@@ -39,4 +39,8 @@ class User extends Authenticatable
     public function venues(){
         return $this->hasMany('App\Venue');
     }
+    public function horarios(){
+        return $this->hasMany('App\Horario');
+    }
+
 }
