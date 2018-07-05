@@ -17,8 +17,8 @@ class CreateHorariosTable extends Migration
             $table->increments('id');
 
             $table->date('fecha');
-            $table->strong('hora_inicio');
-            $table->strong('hora_fin');
+            $table->string('hora_inicio');
+            $table->string('hora_fin');
             $table->integer('precio');
             $table->string('tipo');
             $table->string('zona');

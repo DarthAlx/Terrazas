@@ -18,8 +18,11 @@ class RolesController extends Controller
     {
         $usuario=User::find(Auth::user()->id);
         if ($usuario->habilitado) {
-            if ($usuario->is_admin) {
-            return redirect()->intended(url('/admin'));
+            if ($usuario->role=="admin") {
+                return redirect()->intended(url('/admin'));
+            }
+            else if ($usuario->role=="proveedor") {
+                return redirect()->intended(url('/panel'));
             }
             else{
                 return redirect()->intended(url('/perfil'));

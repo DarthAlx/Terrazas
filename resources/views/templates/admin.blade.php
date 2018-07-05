@@ -28,15 +28,16 @@
                     <!--li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li-->
                     <li><a href="{{url('/peticiones')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Peticiones</a></li>
                     <li><a href="{{url('/servicios')}}" class="waves-effect"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Servicios</a></li>
+                    <li><a href="{{url('/crm')}}" class="waves-effect"><i class="fa fa-user" aria-hidden="true"></i> CRM</a></li>
                   @endif
 
-                  @if(Auth::user()->role=="admin")
-                    <li><a href="{{url('/lugares')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li>
+                  @if(Auth::user()->role=="proveedor")
+                    <li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li>
                   @endif
                   
                   
                 
-                <li><a href="{{url('/crm')}}" class="waves-effect"><i class="fa fa-user" aria-hidden="true"></i> CRM</a></li>
+                
             </ul>
         </nav>
 

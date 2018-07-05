@@ -44,7 +44,12 @@
 					          <label for="nombre">Nombre</label>
 					        </div>
 					        <div class="input-field col col-md-6">
-					          <input id="zona" name="zona" type="text" class="validate" value="{{old('zona')}}" required>
+					        	<select name="zona" id="zona" class=" select" required>
+		                          <option value="">Selecciona</option>
+		                          <option value="Polanco">Polanco</option>
+		                          <option value="Santa Fe">Santa Fe</option>
+		                          <option value="Interlomas">Interlomas</option>
+		                        </select>
 					          <label for="zona">Zona</label>
 					        </div>
 					      </div>
@@ -53,9 +58,12 @@
 					          <input id="capacidad" name="capacidad" type="text" class="validate" value="{{old('capacidad')}}" required>
 					          <label for="capacidad">Capacidad</label>
 					        </div>
-					        <div class="input-field col col-md-4">
+					        <div class="input-field col col-md-6">
 					          <select name="tipo" id="tipo" class="select" required>
+					          	<option value="">Selecciona</option>
+					          	<option value="Salón">Salón</option>
 					          	<option value="Terraza">Terraza</option>
+					          	<option value="Jardín">Jardín</option>
 					          </select>
 					          <label for="tipo">Tipo</label>
 					        </div>
@@ -89,7 +97,7 @@
 					      <div class="row">
 					        <div class="input-field col col-md-6">
 					          <input id="precio" name="precio" type="text" class="validate" value="{{old('precio')}}" required>
-					          <label for="precio">Precio normal</label>
+					          <label for="precio">Precio promedio</label>
 					        </div>
 					        <!--div class="input-field col col-md-6">
 					          <input id="precio_especial" namee="precio_especial" type="text" value="{{old('precio_especial')}}" class="validate">

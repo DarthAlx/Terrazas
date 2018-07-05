@@ -66,11 +66,42 @@ Route::get('/nuevo-proveedor', function () {
 });
 Route::post('nuevo-proveedor', 'ProveedoresController@store');
 
+
+
 Route::group(['middleware' => 'proveedor'], function(){
 
 	Route::get('/panel', function () {
-		return view('admin.panel');
+		return view('panel');
 	}); 
+
+	Route::get('/venues', function () {
+		$user=App\User::find(Auth::user()->id);
+		$venues=$user->venues;
+		$servicios=App\Servicio::orderBy('nombre','asc')->get();
+	    return view('admin.venues', ['venues'=>$venues,'servicios'=>$servicios]);
+	});
+
+	Route::get('/venues/nuevo', function () {
+		$servicios=App\Servicio::orderBy('nombre','asc')->get();
+	    return view('admin.venuenuevo', ['servicios'=>$servicios]);
+	});
+	Route::post('agregar-venue', 'VenueController@store');
+
+	Route::delete('eliminar-venue', 'VenueController@destroy');
+
+
+	Route::get('/venue/{id}', function ($id) {
+		$venue=App\Venue::find($id);
+		$servicios=App\Servicio::orderBy('nombre','asc')->get();
+		if ($venue) {
+			return view('admin.actualizarvenue', ['servicios'=>$servicios,'venue'=>$venue]);
+		}
+		else{
+			return redirect()->intended(url('/404'));
+		}
+	    
+	});
+	Route::post('venue/{id}', 'VenueController@update');
 
 });
 
@@ -102,32 +133,8 @@ Route::group(['middleware' => 'admin'], function(){
 
 
 
-	Route::get('/venues', function () {
-		$venues=App\Venue::orderBy('nombre','asc')->get();
-		$servicios=App\Servicio::orderBy('nombre','asc')->get();
-	    return view('admin.venues', ['venues'=>$venues,'servicios'=>$servicios]);
-	});
-	Route::get('/venues/nuevo', function () {
-		$servicios=App\Servicio::orderBy('nombre','asc')->get();
-	    return view('admin.venuenuevo', ['servicios'=>$servicios]);
-	});
-	Route::post('agregar-venue', 'VenueController@store');
-
-	Route::delete('eliminar-venue', 'VenueController@destroy');
-
-
-	Route::get('/venue/{id}', function ($id) {
-		$venue=App\Venue::find($id);
-		$servicios=App\Servicio::orderBy('nombre','asc')->get();
-		if ($venue) {
-			return view('admin.actualizarvenue', ['servicios'=>$servicios,'venue'=>$venue]);
-		}
-		else{
-			return redirect()->intended(url('/404'));
-		}
-	    
-	});
-	Route::post('venue/{id}', 'VenueController@update');
+	
+	
 
 	Route::get('/servicios', function () {
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();
