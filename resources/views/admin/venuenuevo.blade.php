@@ -51,6 +51,9 @@
 		                          <option value="Interlomas">Interlomas</option>
 		                        </select>
 					          <label for="zona">Zona</label>
+					          <script>
+						        	document.getElementByID('zona').value="{{old('zona')}}";
+						        </script>
 					        </div>
 					      </div>
 					      <div class="row">
@@ -66,12 +69,15 @@
 					          	<option value="Jardín">Jardín</option>
 					          </select>
 					          <label for="tipo">Tipo</label>
+					          <script>
+						        	document.getElementByID('tipo').value="{{old('tipo')}}";
+						        </script>
 					        </div>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col s12">
 					        	<label for="descripcion">Descripción</label>
-					        	<p>&nbsp;</p><p>&nbsp;</p>
+					        	
 					          <textarea id="descripcion" name="descripcion" class="materialize-textarea" required>{{old('descripcion')}}</textarea>
 					          
 					        </div>
@@ -79,7 +85,7 @@
 					      <div class="row">
 					        <div class="input-field col s12">
 					        	<label for="direccion">Dirección</label>
-					        	<p>&nbsp;</p><p>&nbsp;</p>
+					        	
 					          <textarea id="direccion" name="direccion" class="materialize-textarea" required>{{old('direccion')}}</textarea>
 					          
 					        </div>
@@ -107,12 +113,12 @@
 					      <div class="row">
 					        <div class="input-field col s12">
 					        	<label for="reglamento">Reglamento</label>
-					        	<p>&nbsp;</p><p>&nbsp;</p>
+					        	
 					          <textarea id="reglamento" name="reglamento" class="materialize-textarea" required>{{old('reglamento')}}</textarea>
 					          
 					        </div>
 					      </div>	
-					      <div class="row">
+					      <!--div class="row">
 					        <div class="col s4">
 					        	<div class="switch">
 								    <label>
@@ -143,7 +149,7 @@
 
 
 
-					      </div>
+					      </div-->
 					      
 					    </div>
 

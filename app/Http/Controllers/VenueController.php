@@ -17,6 +17,7 @@ class VenueController extends Controller
         
 
     	$venue = new Venue($request->all());
+        $venue->user_id=Auth::user()->id;
         
         
 
@@ -31,12 +32,12 @@ class VenueController extends Controller
         }
 
         //habilitado
-		if (isset($request->habilitado)) {
+		/*if (isset($request->habilitado)) {
 			$venue->habilitado=1;
 		}
 		else{
 			$venue->habilitado=0;
-		}
+		}*/
        
         if ($request->hasFile('imagen')) {
           $file = $request->file('imagen');
@@ -137,12 +138,7 @@ class VenueController extends Controller
         }
 
         //habilitado
-        if (isset($request->habilitado)) {
-            $venue->habilitado=1;
-        }
-        else{
-            $venue->habilitado=0;
-        }
+
        
         if ($request->hasFile('imagen')) {
           $file = $request->file('imagen');

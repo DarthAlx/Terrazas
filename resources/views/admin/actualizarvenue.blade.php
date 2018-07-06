@@ -44,29 +44,40 @@
 					          <label for="nombre">Nombre</label>
 					        </div>
 					        <div class="input-field col col-md-6">
-					          <input id="zona" name="zona" type="text" class="validate" value="{{$venue->zona or old('zona')}}" required>
+					        	<select name="zona" id="zona" class=" select" required>
+		                          <option value="">Selecciona</option>
+		                          <option value="Polanco">Polanco</option>
+		                          <option value="Santa Fe">Santa Fe</option>
+		                          <option value="Interlomas">Interlomas</option>
+		                        </select>
+		                        
 					          <label for="zona">Zona</label>
 					        </div>
+					        <script>
+						        	document.getElementById('zona').value="{!!$venue->zona or old('zona')!!}";
+						        </script>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col col-md-6">
 					          <input id="capacidad" name="capacidad" type="text" class="validate" value="{{$venue->capacidad or old('capacidad')}}" required>
 					          <label for="capacidad">Capacidad</label>
 					        </div>
-					        <div class="input-field col col-md-4">
+					        <div class="input-field col col-md-6">
 					          <select name="tipo" id="tipo" class="select" required>
+					          	<option value="">Selecciona</option>
+					          	<option value="Salón">Salón</option>
 					          	<option value="Terraza">Terraza</option>
+					          	<option value="Jardín">Jardín</option>
 					          </select>
 					          <label for="tipo">Tipo</label>
 					        </div>
 					        <script>
-					        	document.getElementByID('tipo').value="{{$venue->nombre or old('tipo')}}";
+					        	document.getElementById('tipo').value="{!!$venue->tipo or old('tipo')!!}";
 					        </script>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col s12">
 					        	<label for="descripcion">Descripción</label>
-					        	<p>&nbsp;</p><p>&nbsp;</p>
 					          <textarea id="descripcion" name="descripcion" class="materialize-textarea" required>{{$venue->descripcion or old('descripcion')}}</textarea>
 					          
 					        </div>
@@ -74,7 +85,7 @@
 					      <div class="row">
 					        <div class="input-field col s12">
 					        	<label for="direccion">Dirección</label>
-					        	<p>&nbsp;</p><p>&nbsp;</p>
+
 					          <textarea id="direccion" name="direccion" class="materialize-textarea" required>{{$venue->direccion or old('direccion')}}</textarea>
 					          
 					        </div>
@@ -102,54 +113,12 @@
 					      <div class="row">
 					        <div class="input-field col s12">
 					        	<label for="reglamento">Reglamento</label>
-					        	<p>&nbsp;</p><p>&nbsp;</p>
 					          <textarea id="reglamento" name="reglamento" class="materialize-textarea" required>{{$venue->reglamento or old('reglamento')}}</textarea>
 					          
 					        </div>
 					      </div>	
-					      <div class="row">
-					        <div class="col s4">
-					        	<div class="switch">
-								    <label>
-								      <input type="checkbox" name="habilitado" id="habilitado" checked="checked"/>
-								      <span class="lever"></span>
-								      
-								    </label>
-								  </div>
-					          <p>      
-							      <label for="habilitado">Habilitado</label>
-						      </p>
-					        </div>
-					        @if($venue->habilitado)
-							      <script>
-							      	$('#habilitado').prop('checked', true);
-							      </script>
-						      @endif
-					
-
-					        <div class="col s4">
-					        	<div class="switch">
-								    <label>
-								      <input type="checkbox" name="destacado" id="destacado"/>
-								      <span class="lever"></span>
-								      
-								    </label>
-								  </div>
-					          <p>      
-							      <label for="destacado">Destacado</label>
-						      </p>
-					        </div>
-					        @if($venue->destacado)
-							      <script>
-							      	$('#destacado').prop('checked', true);
-							      </script>
-						      @endif
-						      <p>&nbsp;</p>
-	      						<p>&nbsp;</p>
 
 
-
-					      </div>
 					      
 					    </div>
 
@@ -160,7 +129,7 @@
 
 			<div class="col-md-4">
 
-				    <h5>Catálogos</h5>
+				    <h5>Servicios</h5>
 				    <div>
 				    	@if($servicios)
 				    	@foreach($servicios as $servicio)
@@ -187,6 +156,7 @@
 				
 				    <h5>Imágen destacada</h5>
 				    <div>
+				    	<img src="{{url('uploads/venues')}}/{{$venue->imagen}}" class="img-responsive" alt="">
 					      <div class="file-field input-field">
 						      <div class="btn">
 						        <span>Subir</span>
