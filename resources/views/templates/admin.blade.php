@@ -33,6 +33,8 @@
 
                   @if(Auth::user()->role=="proveedor")
                     <li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li>
+                    <li><a href="{{url('/fechas')}}" class="waves-effect"><i class="fa fa-clock-o" aria-hidden="true"></i> Fechas</a></li>
+
                   @endif
                   
                   

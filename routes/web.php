@@ -103,6 +103,21 @@ Route::group(['middleware' => 'proveedor'], function(){
 	});
 	Route::post('venue/{id}', 'VenueController@update');
 
+
+
+
+
+	Route::get('/fechas', function () {
+		$user=App\User::find(Auth::user()->id);
+		$fechas=$user->horarios;
+		$venues=$user->venues;
+	    return view('admin.fechas', ['fechas'=>$fechas,'venues'=>$venues]);
+	});
+
+		Route::post('agregar-fecha', 'HorarioController@store');
+
+	Route::delete('eliminar-fecha', 'HorarioController@destroy');
+
 });
 
 Route::group(['middleware' => 'admin'], function(){
