@@ -116,6 +116,8 @@ Route::group(['middleware' => 'proveedor'], function(){
 
 		Route::post('agregar-fecha', 'HorarioController@store');
 
+		Route::post('actualizar-fecha', 'HorarioController@update');
+
 	Route::delete('eliminar-fecha', 'HorarioController@destroy');
 
 });

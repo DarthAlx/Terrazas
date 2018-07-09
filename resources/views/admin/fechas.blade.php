@@ -19,6 +19,14 @@
 		<div class="row">
 			<div class="col-md-12">
 				@include('snip.notificaciones')
+				@if($venues->isEmpty())
+				<div class="alert alert-warning alert-dismissable">
+				    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				    <ul>
+				        <li>Aún no se han creado lugares, te recomendamos ir a la sección <a href="{{url('/venues')}}">lugares</a> y crear los necesarios.</li>
+				    </ul>
+				  </div>
+				@endif
 			</div>
 		</div>
 		<p>&nbsp;</p>
@@ -49,7 +57,7 @@
 							<td>{{$fecha->precio}}</td>
 							<td>{{$fecha->status}}</td>
 							<td>
-								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$fecha->id}}"><i class="fa fa-plus"></i></a>
+								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$fecha->id}}"><i class="fa fa-search-plus"></i></a>
 								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$fecha->id}}"><i class="fa fa-times-circle"></i></a>
 							</td>	
 
@@ -100,13 +108,15 @@
 				{!! csrf_field() !!}
 
 				<div class="input-field col m12">
-		          <select name="venue_id" id="venue" class="select">
+					<label for="venuen">Lugar</label>
+					<br>
+		          <select name="venue_id" id="venuen" class="select">
 		          	<option value="">Selecciona...</option>
 		          	@foreach($venues as $venue)
 						<option value="{{$venue->id}}">{{$venue->nombre}}</option>
 		          	@endforeach
 		          </select>
-		          <label for="fecha">Fecha</label>
+		          
 		        </div>
 				<div class="input-field col m12">
 		          <input id="fecha" name="fecha" type="text" class="validate datepicker" value="{{old('fecha')}}" required>
@@ -159,53 +169,45 @@
 	  <div id="update{{$fecha->id}}" class="modal">
 	  	<form action="{{ url('/actualizar-fecha') }}" method="post" enctype="multipart/form-data">
 	    <div class="modal-content">
-	      <h4>Editar ({{$fecha->nombre}})</h4>
-				{!! csrf_field() !!}
-				<div class="input-field col m8">
-					<input type="hidden" value="{{$fecha->id}}" name="id">
-		          <input id="nombre" name="nombre" type="text" class="validate" value="{{ $fecha->nombre or old('nombre')}}" required>
-		          <label for="nombre">Nombre del fecha</label>
-		        </div>
-		        <div class="input-field col m8">
-		          <input id="icono" name="icono" type="text" class="validate" value="{{ $fecha->icono or old('icono')}}" required>
-		          <label for="icono">Icono</label>
-		        </div>
-		        <div class="col m4">
-		        	<input type="submit" value="Guardar" class="btn btn-primary right waves-effect waves-light">
-		        </div>
-		        <p>&nbsp;</p><p>&nbsp;</p>
-	    </div>
-
-
-	    <div class="modal-content">
 	      <h4>Editar ({{$fecha->venue->nombre}} - {{$fecha->fecha}})</h4>
 				{!! csrf_field() !!}
 
 				<div class="input-field col m12">
-		          <select name="venue_id" id="venue" class="select">
+					<label for="venue{{$fecha->id}}">Lugar</label>
+					<br>
+		          <select name="venue_id" id="venue{{$fecha->id}}" class="select">
 		          	<option value="">Selecciona...</option>
 		          	@foreach($venues as $venue)
 						<option value="{{$venue->id}}">{{$venue->nombre}}</option>
 		          	@endforeach
+
 		          </select>
-		          <label for="fecha">Fecha</label>
+		          @foreach($venues as $venue)
+						<script>
+							console.log('{{$venue->id}}');
+			          	document.getElementById('venue{{$fecha->id}}').value="{!!$venue->id or old('venue_id')!!}"
+			          </script>
+		          	@endforeach
+		          
+		          
 		        </div>
 				<div class="input-field col m12">
-		          <input id="fecha" name="fecha" type="text" class="validate datepicker" value="{{old('fecha')}}" required>
+		          <input id="fecha" name="fecha" type="text" class="validate datepicker" value="{{$fecha->fecha or old('fecha')}}" required>
 		          <label for="fecha">Fecha</label>
 		        </div>
 		        <div class="input-field col m6">
-		          <input id="hora_inicio" name="hora_inicio" type="text" class="validate timepicker" value="{{old('hora_inicio')}}" required>
+		          <input id="hora_inicio" name="hora_inicio" type="text" class="validate timepicker" value="{{$fecha->hora_inicio or old('hora_inicio')}}" required>
 		          <label for="hora_inicio">Inicio</label>
 		        </div>
 		        <div class="input-field col m6">
-		          <input id="hora_fin" name="hora_fin" type="text" class="validate timepicker" value="{{old('hora_fin')}}" required>
+		          <input id="hora_fin" name="hora_fin" type="text" class="validate timepicker" value="{{$fecha->hora_fin or old('hora_fin')}}" required>
 		          <label for="hora_fin">Fin</label>
 		        </div>
 		        <div class="input-field col m12">
-		          <input id="precio" name="precio" type="number" class="validate" value="{{old('precio')}}" required>
+		          <input id="precio" name="precio" type="number" class="validate" value="{{$fecha->precio or old('precio')}}" required>
 		          <label for="precio">Precio</label>
 		        </div>
+		        <input type="hidden" name="id" value="{{$fecha->id}}">
 		        <div class="col m4">
 		        	<input type="submit" value="Guardar" class="btn btn-primary right waves-effect waves-light">
 		        </div>

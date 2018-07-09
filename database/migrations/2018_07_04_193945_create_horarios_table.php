@@ -25,8 +25,8 @@ class CreateHorariosTable extends Migration
             $table->bigInteger('capacidad');
             $table->bigInteger('venue_id');
             $table->bigInteger('user_id');
-            $table->bigInteger('apartador');
-            $table->string('status');
+            $table->bigInteger('apartador')->nullable(true);
+            $table->string('status')->default("disponible");
             $table->timestamps();
         });
     }
