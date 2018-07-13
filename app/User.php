@@ -42,5 +42,8 @@ class User extends Authenticatable
     public function horarios(){
         return $this->hasMany('App\Horario');
     }
+    public function serviciosextra(){
+        return $this->hasMany('App\ServicioExtra');
+    }
 
 }

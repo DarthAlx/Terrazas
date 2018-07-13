@@ -120,6 +120,21 @@ Route::group(['middleware' => 'proveedor'], function(){
 
 	Route::delete('eliminar-fecha', 'HorarioController@destroy');
 
+
+		Route::get('/servicios-extra', function () {
+			$user=App\User::find(Auth::user()->id);
+			$serviciosextra=$user->serviciosextra;
+		    return view('admin.servicios-extra', ['serviciosextra'=>$serviciosextra]);
+		});
+
+		Route::post('agregar-servicioextra', 'ServicioController@storex');
+
+		Route::post('actualizar-servicioextra', 'ServicioController@updatex');
+
+		Route::delete('eliminar-servicioextra', 'ServicioController@destroyx');
+
+
+
 });
 
 Route::group(['middleware' => 'admin'], function(){
