@@ -26,6 +26,7 @@ class CreateVenuesTable extends Migration
             $table->integer('capacidad');
             $table->longText('reglamento');
             $table->string('servicios');
+            $table->string('serviciosextra');
             $table->string('tipo');
             $table->boolean('habilitado')->default(true);
             $table->boolean('destacado')->default(false);

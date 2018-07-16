@@ -160,7 +160,7 @@
 
 			<div class="col-md-4">
 
-				    <h5>Catálogos</h5>
+				    <h5>Servicios incluidos</h5>
 				    <div>
 				    	@if($servicios)
 				    	@foreach($servicios as $servicio)
@@ -169,6 +169,22 @@
 					          <p>
 							      <input type="checkbox" name="servicio[]" value="{{$servicio->id}}" id="cat{{$servicio->id}}"/>
 							      <label for="cat{{$servicio->id}}">{{$servicio->nombre}}</label>
+						      </p>
+					        </div>
+					      </div>
+					    @endforeach
+					    @endif
+				    </div>
+
+				    <h5>Servicios extra</h5>
+				    <div>
+				    	@if($serviciosextra)
+				    	@foreach($serviciosextra as $servicioextra)
+					      <div class="row">
+					        <div class="col s6">
+					          <p>
+							      <input type="checkbox" name="serviciosextra[]" value="{{$servicioextra->id}}" id="ext{{$servicioextra->id}}"/>
+							      <label for="ext{{$servicioextra->id}}">{{$servicioextra->nombre}}</label>
 						      </p>
 					        </div>
 					      </div>

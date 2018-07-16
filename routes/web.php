@@ -67,6 +67,18 @@ Route::get('/nuevo-proveedor', function () {
 Route::post('nuevo-proveedor', 'ProveedoresController@store');
 
 
+Route::get('/lugar/{id}', function ($id) {
+	$venue=App\Venue::find($id);
+	
+	if ($venue) {
+		return view('terraza', ['venue'=>$venue]);
+	}
+	else{
+		return redirect()->intended(url('/404'));
+	}
+    
+});
+
 
 Route::group(['middleware' => 'proveedor'], function(){
 
@@ -83,7 +95,8 @@ Route::group(['middleware' => 'proveedor'], function(){
 
 	Route::get('/venues/nuevo', function () {
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();
-	    return view('admin.venuenuevo', ['servicios'=>$servicios]);
+		$serviciosextra=App\ServicioExtra::where('user_id',Auth::user()->id)->orderBy('nombre','asc')->get();
+	    return view('admin.venuenuevo', ['servicios'=>$servicios,'serviciosextra'=>$serviciosextra]);
 	});
 	Route::post('agregar-venue', 'VenueController@store');
 
@@ -93,8 +106,9 @@ Route::group(['middleware' => 'proveedor'], function(){
 	Route::get('/venue/{id}', function ($id) {
 		$venue=App\Venue::find($id);
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();
+		$serviciosextra=App\ServicioExtra::where('user_id',Auth::user()->id)->orderBy('nombre','asc')->get();
 		if ($venue) {
-			return view('admin.actualizarvenue', ['servicios'=>$servicios,'venue'=>$venue]);
+			return view('admin.actualizarvenue', ['servicios'=>$servicios,'venue'=>$venue,'serviciosextra'=>$serviciosextra]);
 		}
 		else{
 			return redirect()->intended(url('/404'));

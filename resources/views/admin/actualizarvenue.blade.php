@@ -150,6 +150,28 @@
 					    @endif
 				    </div>
 
+
+				    <h5>Servicios extra</h5>
+				    <div>
+				    	@if($serviciosextra)
+				    	@foreach($serviciosextra as $servicioextra)
+					      <div class="row">
+					        <div class="col s6">
+					          <p>
+							      <input type="checkbox" name="serviciosextra[]" value="{{$servicioextra->id}}" id="ext{{$servicioextra->id}}"/>
+							      <label for="ext{{$servicioextra->id}}">{{$servicioextra->nombre}}</label>
+						      </p>
+					        </div>
+					      </div>
+					    @endforeach
+					    @foreach(explode(',',$venue->serviciosextra) as $servicioextra)
+							<script>
+							    $('#ext{{$servicioextra}}').prop('checked', true);
+							</script>
+					    @endforeach
+					    @endif
+				    </div>
+
 				  
 
 

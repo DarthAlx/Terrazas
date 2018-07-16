@@ -21,7 +21,7 @@ class VenueController extends Controller
         
         
 
-        //categoria
+        //servicios
         if (isset($request->servicio)) {
           $venue->servicios=implode(",", $request->servicio);
         }
@@ -29,6 +29,10 @@ class VenueController extends Controller
             Session::flash('mensaje', 'Selecciona o crea por lo menos un servicio.');
             Session::flash('class', 'danger');
             return redirect()->intended(url('/venues/nuevo'))->withInput();
+        }
+        //serviciosextra
+        if (isset($request->serviciosextra)) {
+          $venue->serviciosextra=implode(",", $request->serviciosextra);
         }
 
         //habilitado
@@ -127,7 +131,7 @@ class VenueController extends Controller
         $venue->reglamento=$request->reglamento;
         $venue->tipo=$request->tipo;
         
-        //categoria
+        //servicios
         if (isset($request->servicio)) {
           $venue->servicios=implode(",", $request->servicio);
         }
@@ -135,6 +139,11 @@ class VenueController extends Controller
             Session::flash('mensaje', 'Selecciona o crea por lo menos un servicio.');
             Session::flash('class', 'danger');
             return redirect()->intended(url()->previous())->withInput();
+        }
+
+        //serviciosextra
+        if (isset($request->serviciosextra)) {
+          $venue->serviciosextra=implode(",", $request->serviciosextra);
         }
 
         //habilitado
@@ -177,7 +186,7 @@ class VenueController extends Controller
         }
         if ($request->poplets) {
             $path = base_path('uploads/venues/poplets/'.$venue->id.'/');
-            $oldpoplets=Galería::where('venue_id', $venue->id)->get();
+            $oldpoplets=Galeria::where('venue_id', $venue->id)->get();
             foreach ($oldpoplets as $oldpoplet) {
                 File::delete($path . $oldpoplet->imagen);
                 $oldpoplet->delete();
