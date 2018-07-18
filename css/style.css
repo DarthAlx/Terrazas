@@ -801,9 +801,7 @@ h3 {
     .buttonsbar{
     display: block;
 }
-    .container{
-        width: 100%;
-    }
+    
     .navbar-brand-centered {
         position: absolute;
         left: 50%;
@@ -821,9 +819,7 @@ h3 {
 }
 }
 @media screen and (min-width:768px){
-    .container{
-        width: inherit;
-    }
+   
     .product.big .product-image img{
     max-width: 250px;
     }

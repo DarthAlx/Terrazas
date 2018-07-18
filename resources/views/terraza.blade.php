@@ -112,6 +112,7 @@
 				</div>
 				<div class="col-md-4">
 					<p>&nbsp;</p>
+					<form action="{{url('reservar-lugar')}}" method="get">
 					<div class="reservacion hidden-xs hidden-sm" id="reservacion">
 						<div class="precio">
 							<h5><strong>$399 MXN</strong> <small>por evento</small></h5>
@@ -119,24 +120,28 @@
 							<div class="map">
 								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120447.76804191722!2d-99.16662403042737!3d19.36946654081599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1526928677783" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
 							</div>
-							<input type="date" class="datepicker" placeholder="Fecha">
+							<input type="hidden" name="venue" value="{{$venue->id}}">
+							<input type="date" name="fecha" class="datepicker" placeholder="Fecha">
 							<button class="btn btn-primary" style="width: 100%;">Reservar</button>
 						</div>
 					</div>
-
+					</form>
+					<form action="{{url('reservar-lugar')}}" method="get">
 					<div class="reservacionmini visible-xs visible-sm" id="reservacionmini">
 						<div class="precio row">
 							<div class="col-xs-6">
 								<h5><strong>$399 MXN</strong> <small>por evento</small></h5>
 							</div>
 							<div class="col-xs-6">
-								<input type="date" class="datepicker" placeholder="Fecha">
+								<input type="hidden" name="venue" value="{{$venue->id}}">
+								<input type="date" name="fecha" class="datepicker" placeholder="Fecha">
 							</div>
 							
 							
 							<button class="btn btn-primary" style="width: 100%;">Reservar</button>
 						</div>
 					</div>
+					</form>
 					<script>
 						var reservacion = document.getElementById("reservacion");
 
@@ -172,12 +177,12 @@
 			  	@foreach($venue->galeria as $poplet)
 			  	@if($galcont==1)
 			    <div class="item active">
-			      <img src="{{url('uploads/venues')}}/poplets/{{$venue->id}}/{{$poplet->imagen}}" class="img-responsive">
+			      <img src="{{url('uploads/venues')}}/poplets/{{$venue->id}}/{{$poplet->imagen}}" class="img-responsive galeria">
 			    </div>
 			    <?php $galcont++; ?>
 			    @else
 			    <div class="item">
-			      <img src="{{url('uploads/venues')}}/poplets/{{$venue->id}}/{{$poplet->imagen}}" class="img-responsive">
+			      <img src="{{url('uploads/venues')}}/poplets/{{$venue->id}}/{{$poplet->imagen}}" class="img-responsive galeria">
 			    </div>
 			    @endif
 			    @endforeach
@@ -249,6 +254,28 @@
 		@foreach($venue->horarios as $horario)
 			@if($horario->status=="rentado")
 				$("div[aria-label='{{$horario->fecha}}']").css("background-color","red");
+				$("div[aria-label='{{$horario->fecha}}']").click(false);
+			@endif
+				
+			@if($horario->status=="apartado")
+				$("div[aria-label='{{$horario->fecha}}']").css("background-color","orange");
+			@endif
+
+			@if($horario->status=="disponible")
+				$("div[aria-label='{{$horario->fecha}}']").css("background-color","green");
+			@endif
+		@endforeach
+
+		
+	});
+
+
+$(document).ready(function(){
+	var calendario= $('.picker__frame').html();
+    $('.picker__holder').click(function(){
+		@foreach($venue->horarios as $horario)
+			@if($horario->status=="rentado")
+				$("div[aria-label='{{$horario->fecha}}']").css("background-color","red");
 			@endif
 				
 			@if($horario->status=="apartado")
@@ -260,5 +287,27 @@
 			@endif
 		@endforeach
 	});
+
+	$('.picker__input').click(function(){
+		@foreach($venue->horarios as $horario)
+			@if($horario->status=="rentado")
+				$("div[aria-label='{{$horario->fecha}}']").css("background-color","red");
+			@endif
+				
+			@if($horario->status=="apartado")
+				$("div[aria-label='{{$horario->fecha}}']").css("background-color","orange");
+			@endif
+
+			@if($horario->status=="disponible")
+				$("div[aria-label='{{$horario->fecha}}']").css("background-color","green");
+			@endif
+		@endforeach
+	});
+});
+	
+
+
+
+
 	</script>
 @endsection

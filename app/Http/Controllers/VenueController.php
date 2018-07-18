@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Venue;
 use App\Galeria;
+use App\Horario;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\File;
@@ -12,6 +13,17 @@ use Illuminate\Support\Facades\Storage;
 
 class VenueController extends Controller
 {
+    public function reservar(Request $request){
+
+        $horario=Horario::where('venue_id',$request->venue)->where('fecha',$request->fecha)->first();
+        
+        if ($horario) {
+            return view('reservar-lugar', ['horario'=>$horario]);
+        }
+        else{
+            return redirect()->intended(url('/404'));
+        }
+    }
     public function store(Request $request)
     {
         
@@ -33,6 +45,9 @@ class VenueController extends Controller
         //serviciosextra
         if (isset($request->serviciosextra)) {
           $venue->serviciosextra=implode(",", $request->serviciosextra);
+        }
+        else{
+            $venue->serviciosextra=null;
         }
 
         //habilitado
@@ -144,6 +159,9 @@ class VenueController extends Controller
         //serviciosextra
         if (isset($request->serviciosextra)) {
           $venue->serviciosextra=implode(",", $request->serviciosextra);
+        }
+        else{
+            $venue->serviciosextra=null;
         }
 
         //habilitado
