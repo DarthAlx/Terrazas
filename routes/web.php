@@ -81,6 +81,8 @@ Route::get('/lugar/{id}', function ($id) {
 
 Route::get('reservar-lugar', 'VenueController@reservar');
 
+Route::post('pagar','OrdenController@pagar');
+
 Route::group(['middleware' => 'proveedor'], function(){
 
 	Route::get('/panel', function () {
