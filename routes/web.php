@@ -51,11 +51,12 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 
 Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/retorno', 'Auth\LoginController@handleProviderCallback');
-
+/*
 Route::get('/lugares', function () {
-	$lugares=App\Venue::where('habilitado',1)->orderBy('nombre','asc')->get();
+	$lugares=App\Horario::orderBy('nombre','asc')->get();
+	dd($lugares);
     return view('lugares',['lugares'=>$lugares]);
-});
+});*/
 
 Route::get('lugares', 'VenueController@buscar');
 

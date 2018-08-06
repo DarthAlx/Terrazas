@@ -288,7 +288,8 @@ class VenueController extends Controller
         }
 */
 
-        $lugares=Venue::tipo($request->get('que'))->zona($request->get('donde'))->capacidad($request->get('cuantos'))->orderBy('nombre','asc')->get();
+        $lugares=Horario::tipo($request->get('que'))->zona($request->get('donde'))->capacidad($request->get('cuantos'))->fecha($request->get('cuando'))->orderBy('nombre','asc')->get();
+
         return view('lugares',['lugares'=>$lugares]);
     }
 

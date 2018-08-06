@@ -14,7 +14,8 @@ class HorarioController extends Controller
     {
     	$horario = new Horario($request->all());
     	$venue=Venue::find($request->venue_id);
-    	$horario->tipo=$venue->tipo;
+        $horario->nombre=$venue->nombre;
+        $horario->tipo=$venue->tipo;
     	$horario->zona=$venue->zona;
     	$horario->capacidad=$venue->capacidad;
     	$horario->user_id=$venue->user_id;
@@ -46,8 +47,8 @@ class HorarioController extends Controller
 
 
     public function update(Request $request){
-    	$horario = Horario::find($request->id);
-
+        $horario = Horario::find($request->id);
+        $horario->nombre=$venue->nombre;
 		$horario->fecha=$request->fecha;
 		$horario->hora_inicio=$request->hora_inicio;
 		$horario->hora_fin=$request->hora_fin;

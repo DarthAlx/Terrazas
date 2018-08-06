@@ -25,19 +25,24 @@
 				</div>
 				<div class="col-md-9 col-sm-8 col-xs-12">
 					<div class="row">
-						@foreach($lugares as $venue)
-						<div class="col-md-4 col-sm-4 col-xs-6">
-							<div class="terraza-small">
-								<a href="{{url('/lugar')}}/{{$venue->id}}" class="link-wrapper">
-									<img src="{{url('/uploads/venues')}}/{{$venue->imagen}}" class="img-responsive" alt="">
-									<div class="title-wrapper">
-										<a href="#" class="title">
-											{{$venue->nombre}}
+						@php $array=array(); @endphp
+						@foreach($lugares as $horario)
+							@if(!in_array($horario->nombre,$array))
+								@php $venue=$horario->venue @endphp
+								<div class="col-md-4 col-sm-4 col-xs-6">
+									<div class="terraza-small">
+										<a href="{{url('/lugar')}}/{{$venue->id}}" class="link-wrapper">
+											<img src="{{url('/uploads/venues')}}/{{$venue->imagen}}" class="img-responsive" alt="">
+											<div class="title-wrapper">
+												<a href="#" class="title">
+													{{$venue->nombre}}
+												</a>
+											</div>
 										</a>
 									</div>
-								</a>
-							</div>
-						</div>
+								</div>
+								@php $array[]=$horario->nombre; @endphp
+							@endif
 						@endforeach				
 					</div>
 				</div>
