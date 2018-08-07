@@ -18,9 +18,9 @@ class ProveedoresController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'name' => 'string|max:255',
+            'email' => 'string|email|max:255|unique:users',
+            'password' => 'string|min:6|confirmed',
         ]);
     }
     public function store(Request $request){
