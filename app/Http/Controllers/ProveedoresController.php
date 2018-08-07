@@ -29,9 +29,9 @@ class ProveedoresController extends Controller
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
-            $this->throwValidationException(
-              $request, $validator
-            );
+            Session::flash('mensaje', 'Hubo un error al guardar la información.');
+            Session::flash('class', 'danger');
+            return redirect()->intended(url()->previous())->withInput();
         }
         else{
             $user = new User($request->all());
