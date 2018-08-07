@@ -202,5 +202,6 @@ Route::group(['middleware' => 'admin'], function(){
 	    return view('admin.peticiones', ['peticiones'=>$peticiones]);
 	});
 	Route::delete('eliminar-peticion', 'ProveedoresController@destroy');
+	
 	Route::post('aceptar-peticion', 'ProveedoresController@accept');
 });

@@ -131,8 +131,8 @@
 	      <p>¿Está seguro que desea dar de alta este lugar?</p>
 
 	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn" style="float: right;">Cancelar</a> 
-			<form action="{{ url('/aceptar-peticion') }}" method="post" enctype="multipart/form-data">
-				{{ method_field('DELETE') }}
+			<form action="{{ url('/aceptar-peticion') }}" method="POST">
+
 				{!! csrf_field() !!}
 				<input type="hidden" name="aceptar" value="{{$peticion->id}}" style="float: right;">
 				<input type="submit" class="modal-action modal-close waves-effect waves-green green btn" value="Aceptar" style="float: right;">
