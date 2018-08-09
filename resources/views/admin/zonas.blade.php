@@ -7,11 +7,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-6">
-				<h3 class="">Servicios</h3>
+				<h3 class="">Zonas</h3>
 			</div>
 			<div class="col-md-6 text-right valign-wrapper" style="justify-content: space-between;">
 				<div class="text-center" style="margin-left: auto; margin-top: 20px;">
-					<a href="#nuevo" class="btn right waves-effect waves-light btn-large modal-trigger">Añadir nuevo</a>
+					<a href="#nueva" class="btn right waves-effect waves-light btn-large modal-trigger">Añadir nueva</a>
 				</div>
 				
 			</div>
@@ -33,19 +33,19 @@
 			  <thead>
 			  	<tr>
 					<th>Nombre</th>
-			      	<th>Icono</th>			      	
+			      				      	
 			      	<th></th>
 			  	</tr>
 			  </thead>
 			  <tbody>
-			  	@if($servicios)
-			  		@foreach($servicios as $servicio)
+			  	@if($zonas)
+			  		@foreach($zonas as $zona)
 						<tr>
-							<td>{{$servicio->nombre}}</td>
-							<td>{{$servicio->icono}}</td>							
+							<td>{{$zona->nombre}}</td>
+												
 							<td>
-								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$servicio->id}}"><i class="fa fa-pencil"></i></a>
-								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$servicio->id}}"><i class="fa fa-times-circle"></i></a>
+								<a class="waves-effect waves-light btn modal-trigger" href="#update{{$zona->id}}"><i class="fa fa-pencil"></i></a>
+								<a class="waves-effect waves-light btn red modal-trigger" href="#delete{{$zona->id}}"><i class="fa fa-times-circle"></i></a>
 							</td>	
 						</tr>
 					@endforeach
@@ -66,7 +66,7 @@
 			  	<tr>
 			  		
 			      	<th>Nombre</th>
-			      	<th>Icono</th>			      	
+			      	      	
 			      	<th></th>
 			  	</tr>
 
@@ -88,18 +88,14 @@
 
 
 
-  <div id="nuevo" class="modal">
-  	<form action="{{ url('/agregar-servicio') }}" method="post" enctype="multipart/form-data">
+  <div id="nueva" class="modal">
+  	<form action="{{ url('/agregar-zona') }}" method="post" enctype="multipart/form-data">
 	    <div class="modal-content">
-	      <h4>Añadir nuevo</h4>
+	      <h4>Añadir nueva</h4>
 				{!! csrf_field() !!}
 				<div class="input-field col m8">
 		          <input id="nombre" name="nombre" type="text" class="validate" value="{{old('nombre')}}" required>
-		          <label for="nombre">Nombre del servicio</label>
-		        </div>
-		        <div class="input-field col m8">
-		          <input id="icono" name="icono" type="text" class="validate" value="{{old('icono')}}" required>
-		          <label for="icono">Icono</label>
+		          <label for="nombre">Nombre de la zona</label>
 		        </div>
 		        <div class="col m4">
 		        	<input type="submit" value="Guardar" class="btn btn-primary right waves-effect waves-light">
@@ -109,19 +105,19 @@
     </form>
   </div>
 
-  @if($servicios)
-	@foreach($servicios as $servicio)
+  @if($zonas)
+	@foreach($zonas as $zona)
 	<!-- Modal Structure -->
-	  <div id="delete{{$servicio->id}}" class="modal">
+	  <div id="delete{{$zona->id}}" class="modal">
 	    <div class="modal-content">
-	      <h4>Eliminar servicio ({{$servicio->nombre}})</h4>
-	      <p>¿Está seguro que desea eliminar este servicio?</p>
+	      <h4>Eliminar zona ({{$zona->nombre}})</h4>
+	      <p>¿Está seguro que desea eliminar esta zona?</p>
 
 	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn" style="float: right;">Cancelar</a> 
-			<form action="{{ url('/eliminar-servicio') }}" method="post" enctype="multipart/form-data">
+				<form action="{{ url('/eliminar-zona') }}" method="post" enctype="multipart/form-data">
 				{{ method_field('DELETE') }}
 				{!! csrf_field() !!}
-				<input type="hidden" name="eliminar" value="{{$servicio->id}}" style="float: right;">
+				<input type="hidden" name="eliminar" value="{{$zona->id}}" style="float: right;">
 				<input type="submit" class="modal-action modal-close waves-effect waves-green red btn" value="Eliminar" style="float: right;">
 			</form>
 			<p>	&nbsp;</p>
@@ -133,19 +129,15 @@
 
 
 	  <!-- Modal Structure -->
-	  <div id="update{{$servicio->id}}" class="modal">
-	  	<form action="{{ url('/actualizar-servicio') }}" method="post" enctype="multipart/form-data">
+	  <div id="update{{$zona->id}}" class="modal">
+	  	<form action="{{ url('/actualizar-zona') }}" method="post" enctype="multipart/form-data">
 	    <div class="modal-content">
-	      <h4>Editar ({{$servicio->nombre}})</h4>
+	      <h4>Editar ({{$zona->nombre}})</h4>
 				{!! csrf_field() !!}
 				<div class="input-field col m8">
-					<input type="hidden" value="{{$servicio->id}}" name="id">
-		          <input id="nombre" name="nombre" type="text" class="validate" value="{{ $servicio->nombre or old('nombre')}}" required>
-		          <label for="nombre">Nombre del servicio</label>
-		        </div>
-		        <div class="input-field col m8">
-		          <input id="icono" name="icono" type="text" class="validate" value="{{ $servicio->icono or old('icono')}}" required>
-		          <label for="icono">Icono</label>
+					<input type="hidden" value="{{$zona->id}}" name="id">
+		          <input id="nombre" name="nombre" type="text" class="validate" value="{{ $zona->nombre or old('nombre')}}" required>
+		          <label for="nombre">Nombre del zona</label>
 		        </div>
 		        <div class="col m4">
 		        	<input type="submit" value="Guardar" class="btn btn-primary right waves-effect waves-light">

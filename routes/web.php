@@ -204,4 +204,18 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::delete('eliminar-peticion', 'ProveedoresController@destroy');
 	
 	Route::post('aceptar-peticion', 'ProveedoresController@accept');
+
+
+	Route::get('/zonas', function () {
+		$zonas=App\Zona::orderBy('nombre','asc')->get();
+	    return view('admin.zonas', ['zonas'=>$zonas]);
+	});
+
+	Route::post('agregar-zona', 'ZonaController@store');
+
+	Route::delete('eliminar-zona', 'ZonaController@destroy');
+
+	Route::post('actualizar-zona', 'ZonaController@update');
+
+
 });
