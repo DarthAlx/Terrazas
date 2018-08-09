@@ -105,18 +105,24 @@
                                                   <label for="nombre">Nombre</label>
                                                 </div>
                                                 <div class="md-form input-field ">
-                                                  <input id="zona" name="zona" type="text" class="validate" value="{{old('zona')}}" required>
+                                                  <select name="zona_id" id="zona" class="select" required>
+                                                    <option value="">Selecciona</option>
+                                                    @foreach($zonas as $zona)
+                                                    <option value="{{$zona->id}}">{{$zona->nombre}}</option>
+                                                    @endforeach
+                                                  </select> 
                                                   <label for="zona">Zona</label>
                                                 </div>
-                                              
-                                              
                                                 <div class="md-form input-field ">
-                                                  <input id="capacidad" name="capacidad" type="text" class="validate" value="{{old('capacidad')}}" required>
+                                                  <input id="capacidad" name="capacidad" type="number" class="validate" value="{{old('capacidad')}}" required>
                                                   <label for="capacidad">Capacidad</label>
                                                 </div>
                                                 <div class="md-form input-field ">
                                                   <select name="tipo" id="tipo" class="select" required>
+                                                    <option value="">Selecciona</option>
+                                                    <option value="Salón">Salón</option>
                                                     <option value="Terraza">Terraza</option>
+                                                    <option value="Jardín">Jardín</option>
                                                   </select>
                                                   <label for="tipo">Tipo</label>
                                                 </div>
@@ -136,28 +142,16 @@
                                                 </div>
                                               
                                                 <div class="input-field">
-                                                  <input id="latitud" name="latitud" type="text" class="validate" value="{{old('latitud')}}" required>
+                                                  <input id="latitud" name="latitud" type="tel" class="validate" value="{{old('latitud')}}" required>
                                                   <label for="latitud">Latitud</label>
                                                 </div>
                                                 <div class="input-field">
-                                                  <input id="longitud" name="longitud" type="text" class="validate" value="{{old('longitud')}}" required>
+                                                  <input id="longitud" name="longitud" type="tel" class="validate" value="{{old('longitud')}}" required>
                                                   <label for="longitud">Longitud</label>
-                                                </div>
-                                              
+                                                </div>                                             
                                                 <div class="input-field">
-                                                  <input id="precio" name="precio" type="text" class="validate" value="{{old('precio')}}" required>
-                                                  <label for="precio">Precio normal</label>
-                                                </div>
-                                                <!--div class="input-field col col-md-6">
-                                                  <input id="precio_especial" namee="precio_especial" type="text" value="{{old('precio_especial')}}" class="validate">
-                                                  <label for="precio_especial">Precio rebajado</label>
-                                                </div-->
-                                              
-                                                <div class="input-field">
-
                                                   <textarea id="reglamento" name="reglamento" class="materialize-textarea" required>{{old('reglamento')}}</textarea>
                                                   <label for="reglamento">Reglamento</label>
-                                                  
                                                 </div>
                                               
                                                 <!--div class="col s4">

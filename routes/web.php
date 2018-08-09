@@ -63,7 +63,8 @@ Route::get('lugares', 'VenueController@buscar');
 
 Route::get('/nuevo-proveedor', function () {
 	$servicios=App\Servicio::orderBy('nombre','asc')->get();
-    return view('auth.proveedores', ['servicios'=>$servicios]);
+	$zonas=App\Zona::orderBy('nombre','asc')->get();
+    return view('auth.proveedores', ['servicios'=>$servicios,'zonas'=>$zonas]);
 });
 Route::post('nuevo-proveedor', 'ProveedoresController@store');
 
@@ -94,13 +95,15 @@ Route::group(['middleware' => 'proveedor'], function(){
 		$user=App\User::find(Auth::user()->id);
 		$venues=$user->venues;
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();
-	    return view('admin.venues', ['venues'=>$venues,'servicios'=>$servicios]);
+		$zonas=App\Zona::orderBy('nombre','asc')->get();
+	    return view('admin.venues', ['venues'=>$venues,'servicios'=>$servicios,'zonas'=>$zonas]);
 	});
 
 	Route::get('/venues/nuevo', function () {
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();
 		$serviciosextra=App\ServicioExtra::where('user_id',Auth::user()->id)->orderBy('nombre','asc')->get();
-	    return view('admin.venuenuevo', ['servicios'=>$servicios,'serviciosextra'=>$serviciosextra]);
+		$zonas=App\Zona::orderBy('nombre','asc')->get();
+	    return view('admin.venuenuevo', ['servicios'=>$servicios,'serviciosextra'=>$serviciosextra,'zonas'=>$zonas]);
 	});
 	Route::post('agregar-venue', 'VenueController@store');
 
@@ -111,13 +114,13 @@ Route::group(['middleware' => 'proveedor'], function(){
 		$venue=App\Venue::find($id);
 		$servicios=App\Servicio::orderBy('nombre','asc')->get();
 		$serviciosextra=App\ServicioExtra::where('user_id',Auth::user()->id)->orderBy('nombre','asc')->get();
+		$zonas=App\Zona::orderBy('nombre','asc')->get();
 		if ($venue) {
-			return view('admin.actualizarvenue', ['servicios'=>$servicios,'venue'=>$venue,'serviciosextra'=>$serviciosextra]);
+			return view('admin.actualizarvenue', ['servicios'=>$servicios,'venue'=>$venue,'serviciosextra'=>$serviciosextra,'zonas'=>$zonas]);
 		}
 		else{
 			return redirect()->intended(url('/404'));
 		}
-	    
 	});
 	Route::post('venue/{id}', 'VenueController@update');
 
@@ -204,6 +207,12 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::delete('eliminar-peticion', 'ProveedoresController@destroy');
 	
 	Route::post('aceptar-peticion', 'ProveedoresController@accept');
+
+
+	Route::get('/peticiones', function () {
+		$peticiones=App\Venue::where('habilitado',0)->orderBy('nombre','asc')->get();
+	    return view('admin.peticiones', ['peticiones'=>$peticiones]);
+	});
 
 
 	Route::get('/zonas', function () {

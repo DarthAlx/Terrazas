@@ -140,8 +140,7 @@ class VenueController extends Controller
         $venue->direccion=$request->direccion;
         $venue->latitud=$request->latitud;
         $venue->longitud=$request->longitud;
-        $venue->zona=$request->zona;
-        $venue->precio=$request->precio;
+        $venue->zona_id=$request->zona_id;
         $venue->capacidad=$request->capacidad;
         $venue->reglamento=$request->reglamento;
         $venue->tipo=$request->tipo;
@@ -266,28 +265,6 @@ class VenueController extends Controller
 
 
     public function buscar(Request $request){
-       // dd($request->input('cuantos', "0"));
-        /*if($request->cuantos){
-            $cuantos=$request->cuantos;
-        } 
-        else {
-            $cuantos=999999999;
-        }
-        
-        if($request->donde){
-            $donde=$request->donde;
-        } 
-        else {
-            $donde='';
-        }
-        if($request->que){
-            $que=$request->que;
-        } 
-        else {
-            $que='';
-        }
-*/
-
         $lugares=Horario::tipo($request->get('que'))->zona($request->get('donde'))->capacidad($request->get('cuantos'))->fecha($request->get('cuando'))->orderBy('nombre','asc')->get();
 
         return view('lugares',['lugares'=>$lugares]);

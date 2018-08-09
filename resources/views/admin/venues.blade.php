@@ -44,7 +44,7 @@
 
 						<tr>
 							<td>{{$venue->nombre}}</td>
-							<td>{{$venue->zona}}</td>
+							<td>{{$venue->zona->nombre}}</td>
 							<td>{{$venue->precio}}</td>
 							<td>{{$venue->capacidad}}</td>
 							<td>{{$venue->tipo}}</td>

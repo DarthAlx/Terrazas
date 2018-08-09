@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Zona extends Model
 {
     protected $table = 'zonas';
-	protected $fillable = ['nombre'];
+    protected $fillable = ['nombre'];
+    public function venues(){
+	    return $this->hasMany('AppVenue');
+	}
 }

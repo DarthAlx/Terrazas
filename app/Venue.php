@@ -7,13 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Venue extends Model
 {
     protected $table = 'venues';
-	protected $fillable = ['nombre', 'descripcion','direccion', 'latitud', 'longitud','imagen', 'zona', 'precio', 'capacidad', 'reglamento', 'servicios','serviciosextra', 'tipo', 'habilitado', 'destacado','user_id'];
+	protected $fillable = ['nombre', 'descripcion','direccion', 'latitud', 'longitud','imagen', 'zona_id', 'capacidad', 'reglamento', 'servicios','serviciosextra', 'tipo', 'habilitado', 'destacado','user_id'];
 
 	public function galeria(){
 	    return $this->hasMany('App\Galeria');
 	}
 	public function user(){
 	    return $this->belongsTo('App\User');
+	}
+	public function zona(){
+	    return $this->belongsTo('App\Zona');
 	}
 	public function scopeTipo($query, $tipo){
 		if (trim($tipo)!="") {

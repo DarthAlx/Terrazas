@@ -20,8 +20,7 @@ class CreateVenuesTable extends Migration
             $table->longText('direccion');
             $table->string('latitud');
             $table->string('longitud');
-            $table->string('zona');
-            $table->integer('precio');
+            $table->bigInteger('zona_id');
             $table->longText('imagen');
             $table->integer('capacidad');
             $table->longText('reglamento');

@@ -44,22 +44,22 @@
 					          <label for="nombre">Nombre</label>
 					        </div>
 					        <div class="input-field col col-md-6">
-					        	<select name="zona" id="zona" class=" select" required>
-		                          <option value="">Selecciona</option>
-		                          <option value="Polanco">Polanco</option>
-		                          <option value="Santa Fe">Santa Fe</option>
-		                          <option value="Interlomas">Interlomas</option>
-		                        </select>
+										<select name="zona_id" id="zona" class="select" required>
+											<option value="">Selecciona</option>
+											@foreach($zonas as $zona)
+											<option value="{{$zona->id}}">{{$zona->nombre}}</option>
+											@endforeach
+										</select> 
 		                        
 					          <label for="zona">Zona</label>
 					        </div>
 					        <script>
-						        	document.getElementById('zona').value="{!!$venue->zona or old('zona')!!}";
+						        	document.getElementById('zona').value="{!!$venue->zona_id or old('zona_id')!!}";
 						        </script>
 					      </div>
 					      <div class="row">
 					        <div class="input-field col col-md-6">
-					          <input id="capacidad" name="capacidad" type="text" class="validate" value="{{$venue->capacidad or old('capacidad')}}" required>
+					          <input id="capacidad" name="capacidad" type="number" class="validate" value="{{$venue->capacidad or old('capacidad')}}" required>
 					          <label for="capacidad">Capacidad</label>
 					        </div>
 					        <div class="input-field col col-md-6">
@@ -92,23 +92,13 @@
 					      </div>
 					      <div class="row">
 					        <div class="input-field col col-md-6">
-					          <input id="latitud" name="latitud" type="text" class="validate" value="{{$venue->latitud or old('latitud')}}" required>
+					          <input id="latitud" name="latitud" type="tel" class="validate" value="{{$venue->latitud or old('latitud')}}" required>
 					          <label for="latitud">Latitud</label>
 					        </div>
 					        <div class="input-field col col-md-6">
-					          <input id="longitud" name="longitud" type="text" class="validate" value="{{$venue->longitud or old('longitud')}}" required>
+					          <input id="longitud" name="longitud" type="tel" class="validate" value="{{$venue->longitud or old('longitud')}}" required>
 					          <label for="longitud">Longitud</label>
 					        </div>
-					      </div>
-					      <div class="row">
-					        <div class="input-field col col-md-6">
-					          <input id="precio" name="precio" type="text" class="validate" value="{{$venue->precio or old('precio')}}" required>
-					          <label for="precio">Precio normal</label>
-					        </div>
-					        <!--div class="input-field col col-md-6">
-					          <input id="precio_especial" namee="precio_especial" type="text" value="{{old('precio_especial')}}" class="validate">
-					          <label for="precio_especial">Precio rebajado</label>
-					        </div-->
 					      </div>
 					      <div class="row">
 					        <div class="input-field col s12">
