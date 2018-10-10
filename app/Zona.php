@@ -9,6 +9,7 @@ class Zona extends Model
     protected $table = 'zonas';
     protected $fillable = ['nombre'];
     public function venues(){
-	    return $this->hasMany('AppVenue');
+        return $this->hasMany('App\Galeria');
+	    return $this->hasMany('App\Venue');
 	}
 }

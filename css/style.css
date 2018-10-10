@@ -1083,4 +1083,6 @@ h3 {
 .entrar .omb_btn-facebook{
     border-radius: 5px;
 }
-
+.materialboxed.active{
+    max-width: 100% !important;
+}

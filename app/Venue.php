@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Venue extends Model
 {
     protected $table = 'venues';
-	protected $fillable = ['nombre', 'descripcion','direccion', 'latitud', 'longitud','imagen', 'zona_id', 'capacidad', 'reglamento', 'servicios','serviciosextra', 'tipo', 'habilitado', 'destacado','user_id'];
+	protected $fillable = ['nombre', 'descripcion','direccion', 'latitud', 'longitud','imagen', 'zona_id', 'capacidad', 'tamaño', 'telefono_lugar', 'reglamento', 'servicios','serviciosextra', 'tipo', 'habilitado', 'destacado','user_id'];
 
 	public function galeria(){
 	    return $this->hasMany('App\Galeria');

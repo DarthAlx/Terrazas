@@ -12,10 +12,10 @@
     </div>
 
 <section >
-        <div class="container">
+        <div class="container registropro">
             <div class="row">
                 <div class="board">
-                    <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+                    
                     <div class="board-inner">
                     <ul class="nav nav-tabs" id="myTab">
                     <div class="liner"></div>
@@ -116,6 +116,14 @@
                                                 <div class="md-form input-field ">
                                                   <input id="capacidad" name="capacidad" type="number" class="validate" value="{{old('capacidad')}}" required>
                                                   <label for="capacidad">Capacidad</label>
+                                                </div>
+                                                <div class="md-form input-field ">
+                                                  <input id="tamaño" name="tamaño" type="number" class="validate" value="{{old('tamaño')}}" required>
+                                                  <label for="tamaño">Tamaño (m<sup>3</sup>)</label>
+                                                </div>
+                                                <div class="md-form input-field ">
+                                                  <input id="telefono_lugar" name="telefono_lugar" type="tel" class="validate" value="{{old('telefono_lugar')}}" required>
+                                                  <label for="telefono_lugar">Teléfono del lugar</label>
                                                 </div>
                                                 <div class="md-form input-field ">
                                                   <select name="tipo" id="tipo" class="select" required>

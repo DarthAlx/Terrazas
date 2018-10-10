@@ -27,7 +27,8 @@
 			  	<a class="navlinks" href="#">
 			  		<div class="col s6 m2 l2 offset-m1 offset-l1 company text-center">
 					  	<i class="fa fa-map-marker ite" aria-hidden="true"></i>
-					  	<p class="text-center navtext">{{$venue->zona}}</p>
+						  
+					  	<p class="text-center navtext">{{$venue->zona->nombre}}</p>
 				  	</div>
 				</a>
 			  	<a class="navlinks" href="#">
@@ -36,12 +37,12 @@
 					  	<p class="text-center navtext">{{$venue->tipo}}</p>
 				  	</div>
 				</a>
-				<a class="navlinks" href="#">
+				<!--a class="navlinks" href="#">
 			  		<div class="col s6 m2 l2 company text-center">
 					  	<i class="fa fa-usd ite" aria-hidden="true"></i> 
 					  	<p class="text-center navtext">{{$venue->precio}}</p>
 				  	</div>
-				</a>
+				</a-->
 				<a class="navlinks" href="#">
 			  		<div class="col s6 m2 l2 company text-center">
 					  	<i class="fa fa-clock-o ite" aria-hidden="true"></i>
@@ -86,11 +87,12 @@
 					<div class="collapse" id="serviciosextra">
 					  <div class="well">
 					    <ul>
+						@if($venue->serviciosextra)
 							@foreach(explode(',',$venue->serviciosextra) as $servicio)
 							<?php $serv=App\ServicioExtra::find($servicio); ?>
 							<li><p><strong>{{$serv->nombre}} - ${{$serv->precio}}</strong>  <br> {{$serv->descripcion}}</p></li>
 							@endforeach
-							
+						@endif
 						</ul>
 					  </div>
 					</div>
@@ -115,7 +117,8 @@
 					<form action="{{url('reservar-lugar')}}" method="get">
 					<div class="reservacion hidden-xs hidden-sm" id="reservacion">
 						<div class="precio">
-							<h5><strong>$<span class="precioxfecha"></span> MXN</strong> <small>por evento</small></h5>
+							<p><small>Desde:</small></p>
+							<h5><strong>$<span class="precioxfecha">{{$min}}</span> MXN</strong> <small>por evento</small></h5>
 							<hr>
 							<div class="map">
 								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120447.76804191722!2d-99.16662403042737!3d19.36946654081599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1526928677783" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -130,7 +133,8 @@
 					<div class="reservacionmini visible-xs visible-sm" id="reservacionmini">
 						<div class="precio row">
 							<div class="col-xs-6">
-								<h5><strong>$<span class="precioxfecha"></span> MXN</strong> <small>por evento</small></h5>
+								<p><small>Desde:</small></p>
+								<h5><strong>$<span class="precioxfecha">{{$min}}</span> MXN</strong> <small>por evento</small></h5>
 							</div>
 							<div class="col-xs-6">
 								<input type="hidden" name="venue" value="{{$venue->id}}">

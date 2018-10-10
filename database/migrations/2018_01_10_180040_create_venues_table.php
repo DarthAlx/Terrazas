@@ -23,6 +23,8 @@ class CreateVenuesTable extends Migration
             $table->bigInteger('zona_id');
             $table->longText('imagen');
             $table->integer('capacidad');
+            $table->bigInteger('tamaño');
+            $table->string('telefono_lugar');
             $table->longText('reglamento');
             $table->string('servicios');
             $table->string('serviciosextra')->nullable(true);

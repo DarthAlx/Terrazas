@@ -33,7 +33,7 @@
                                 <tr>
                                     <td>{{$horario->venue->nombre}}</td>
                                     <td>{{$horario->fecha}}</td>
-                                    <td>{{$horario->zona}}</td>
+                                    <td>{{$horario->venue->zona->nombre}}</td>
                                     <td>{{$horario->tipo}}</td>
                                     <td>${{$horario->precio}} MXN</td>
                                 </tr>

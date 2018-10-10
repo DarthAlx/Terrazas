@@ -89,7 +89,7 @@
                   </div>
                   <h5 class="text-center" id="reservaciones">RESERVACIONES</h5>
                     <form action="{{url('lugares')}}" method="get" enctype="" class="form-inline">
-                      {{csrf_field()}}
+                      
                       <div class="form-group">
                         <label for="donde">¿Dónde?</label>
                         <select name="donde" id="donde" class="form-control browser-default">

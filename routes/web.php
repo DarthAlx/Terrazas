@@ -15,13 +15,14 @@ Auth::routes();
 
 
 Route::get('/', function () {
-    return view('inicio');
+	$venues=App\Venue::where('destacado', 1)->get();
+    return view('inicio',['venues'=>$venues]);
 });
 
 
 Route::get('/perfil', function () {
-		dd("Perfil de usuario");
-
+	$user=App\User::find(Auth::user()->id);
+	return view('perfil', ['user'=>$user]);
 })->middleware('auth');
 
 Route::get('activacion/{token}/{email}', 'HomeController@activacion');
@@ -71,9 +72,17 @@ Route::post('nuevo-proveedor', 'ProveedoresController@store');
 
 Route::get('/lugar/{id}', function ($id) {
 	$venue=App\Venue::find($id);
+	$horarios=$venue->horarios;
+	if($horarios){
+		$min=$horarios->min('precio');
+	}else{
+		$min="-";
+	}
+	
+	
 	
 	if ($venue) {
-		return view('terraza', ['venue'=>$venue]);
+		return view('terraza', ['venue'=>$venue,'min'=>$min]);
 	}
 	else{
 		return redirect()->intended(url('/404'));

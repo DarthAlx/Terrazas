@@ -1,101 +1,276 @@
 @extends('templates.default')
 
 @section('pagecontent')
-<section class="perfil">
-	<div class="perfilheader z-depth-3" style="background: url('{{url('/img/bg')}}/{{rand(1, 30)}}.jpg'); background-size: cover;">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="profilecard">
-						<div class="perfilimg left">
-							<img class="circle" src="{{Auth::user()->avatar}}" alt="">
-						</div>
-						<div class="perfiltext right">
-							<h2>
-								{{Auth::user()->name}}
-							</h2>
-							<div class="chip amber accent-3">
-								 <i class="fa fa-circle-o-notch" aria-hidden="true"></i> 100 <span class="hiddenmov">rifatokens</span>
-							</div>
-							<div class="chip light-blue lighten-3">
-								<i class="fa fa-flag" aria-hidden="true"></i> 3 <span class="hiddenmov">participaciones</span>
-							</div>
-							<div class="chip light-green lighten-3">
-								<i class="fa fa-trophy" aria-hidden="true"></i> 0 <span class="hiddenmov">ganadas</span>
-							</div>
-						</div>
-						
-					</div>
-					
-				</div>
-			</div>
-		</div>
-		
-	</div>
-	<p>&nbsp;</p>
-	<div class="container">
-		<div class="row">
-        <div class="col-md-4">
-          <div class="card z-depth-3">
-            <div class="card-content">
-            	<h3 class="card-title">Tus rifas <i class="fa fa-ticket" aria-hidden="true"></i></h3>
-            	<p class="flow-text">
-            		Aquí puedes encontrar las rifas en las que estás participando actualmente
-            	</p>
-            </div>
 
-            <ul class="collapsible" data-collapsible="accordion" style="margin-bottom: 0;">
-              <li>
-                <div class="collapsible-header"><div class="left">Xbox One </div><div class="right"><i class="fa fa-ticket" aria-hidden="true"></i>15</div></div>
-                <div class="collapsible-body"><span># 1, 2, 3, 4, 5</span></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><div class="left">Iphone X </div><div class="right"><i class="fa fa-ticket" aria-hidden="true"></i>30</div></div>
-                <div class="collapsible-body"><span># 1, 2, 3, 4, 5</span></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><div class="left">Xbox One </div><div class="right"><i class="fa fa-ticket" aria-hidden="true"></i>15</div></div>
-                <div class="collapsible-body"><span># 1, 2, 3, 4, 5</span></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><div class="left">Iphone X </div><div class="right"><i class="fa fa-ticket" aria-hidden="true"></i>30</div></div>
-                <div class="collapsible-body"><span># 1, 2, 3, 4, 5</span></div>
-              </li>
-            </ul>            
+<div class="container bootstrap snippet">
+    <div class="row">
+  		<div class="col-sm-10"><h1>User name</h1></div>
+    	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+              
+
+      <!--div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block file-upload">
+      </div></hr--><br>
+
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
           </div>
-        </div>
-        <div class="col-md-8">
-        	<div class="card z-depth-3 amber accent-2">
-            <div class="card-content">
-            	<h3 class="card-title">Rifas ganadas <i class="fa fa-trophy" aria-hidden="true"></i></h3>
-            	<p class="flow-text">
-            		Aun no has ganado ninguna rifa <i class="fa fa-frown-o" aria-hidden="true"></i>. ¡Sigue participando!
-            	</p>
+          
+          
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul> 
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+            	<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
             </div>
           </div>
+          
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#messages">Menu 1</a></li>
+                <li><a data-toggle="tab" href="#settings">Menu 2</a></li>
+              </ul>
 
-          <div class="card z-depth-3  blue-grey darken-1">
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h5>First name</h5></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h5>Last name</h5></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h5>Phone</h5></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h5>Mobile</h5></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h5>Email</h5></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h5>Location</h5></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h5>Password</h5></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h5>Verify</h5></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+              
+              <hr>
+              
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="messages">
+               
+               <h2></h2>
+               
+               <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h5>First name</h5></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h5>Last name</h5></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h5>Phone</h5></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h5>Mobile</h5></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h5>Email</h5></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h5>Location</h5></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h5>Password</h5></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h5>Verify</h5></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                      </div>
+              	</form>
+               
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="settings">
+            		
+               	
+                  <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h5>First name</h5></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h5>Last name</h5></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h5>Phone</h5></label>
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h5>Mobile</h5></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h5>Email</h5></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h5>Location</h5></label>
+                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="password"><h5>Password</h5></label>
+                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h5>Verify</h5></label>
+                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
+                            </div>
+                      </div>
+              	</form>
+              </div>
+               
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
 
-            <div class="card-content white-text">
-            	<h3 class="card-title white-text">Tus mensajes <i class="fa fa-envelope" aria-hidden="true"></i></h3>
-            	<p class="flow-text">
-            		No tienes ningún mensaje.
-            	</p>
-            </div>
-          </div>
-        </div>
-      </div>
-	</div>
+        </div><!--/col-9-->
+    </div><!--/row-->
 
-</section>
-<p>&nbsp;</p>
-<div class="fixed-action-btn horizontal">
-    <a class="btn-floating btn-large red pulse" data-toggle="tooltip" data-placement="top" title="Gestión de cuenta">
-      <i class="fa fa-user fa2x"></i>
-    </a>
-    <ul>
-      <li><a class="btn-floating blue" data-toggle="tooltip" data-placement="top" title="Direcciones"><i class="fa map-marker"></i></a></li>
-      <li><a class="btn-floating red" data-toggle="tooltip" data-placement="top" title="Editar perfil"><i class="fa fa-pencil"></i></a></li>
-    </ul>
-  </div>
+
 @endsection

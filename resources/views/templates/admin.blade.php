@@ -25,7 +25,8 @@
                   </li>
                   @if(Auth::user()->role=="admin")
                     <li><a href="{{url('/admin')}}" class="waves-effect"><i class="fa fa-bar-chart" aria-hidden="true"></i> Escritorio</a></li>
-                    <!--li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li-->
+                    <li><a href="{{url('/zonas')}}" class="waves-effect"><i class="fa fa-map-marker" aria-hidden="true"></i> Zonas</a></li>
+                    <li><a href="{{url('/venues')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Lugares</a></li>
                     <li><a href="{{url('/peticiones')}}" class="waves-effect"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Peticiones</a></li>
                     <li><a href="{{url('/servicios')}}" class="waves-effect"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Servicios</a></li>
                     <li><a href="{{url('/crm')}}" class="waves-effect"><i class="fa fa-user" aria-hidden="true"></i> CRM</a></li>

@@ -26,105 +26,24 @@
 				</div>
 			</div>
 			<div class="row">
+			@if($venues)
+  				@foreach($venues as $venue)
 				<div class="col-md-3 col-sm-4 col-xs-6">
 					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
+						<a href="{{url('/lugar')}}/{{$venue->id}}" class="link-wrapper">
+							<img src="{{url('/uploads/venues')}}/{{$venue->imagen}}" class="img-responsive" alt="">
 							<div class="title-wrapper">
 								<a href="#" class="title">
-									Terraza 1
+									{{$venue->nombre}}
 								</a>
 							</div>
 						</a>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-							<div class="title-wrapper">
-								<a href="#" class="title">
-									Terraza 2
-								</a>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-							<div class="title-wrapper">
-								<a href="#" class="title">
-									Terraza 3
-								</a>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-							<div class="title-wrapper">
-								<a href="#" class="title">
-									Terraza 4
-								</a>
-							</div>
-						</a>
-					</div>
-				</div>
+  				@endforeach
+			@endif
 			</div>
-			<div class="row">
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-							<div class="title-wrapper">
-								<a href="#" class="title">
-									Terraza 5
-								</a>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-							<div class="title-wrapper">
-								<a href="#" class="title">
-									Terraza 6
-								</a>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-							<div class="title-wrapper">
-								<a href="#" class="title">
-									Terraza 7
-								</a>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6">
-					<div class="terraza-small">
-						<a href="{{url('/terraza')}}" class="link-wrapper">
-							<img src="{{url('/img/terraza1.jpg')}}" class="img-responsive" alt="">
-							<div class="title-wrapper">
-								<a href="#" class="title">
-									Terraza 8
-								</a>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 		<p>&nbsp;</p>
 	</div>

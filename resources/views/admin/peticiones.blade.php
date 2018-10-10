@@ -33,9 +33,9 @@
 			  	<tr>
 					<th>Nombre</th>
 					<th>Email</th>
+					<th>Teléfono</th>
 					<th>Lugar</th>
 			      	<th>Zona</th>
-			      	<th>Precio promedio</th>
 			      	<th>Capacidad</th>
 					<th>Tipo</th>
 					<th></th>
@@ -48,9 +48,10 @@
 						<tr>
 							<td>{{$peticion->user->name}}</td>
 							<td>{{$peticion->user->email}}</td>
+							<td>{{$peticion->user->tel}}</td>
 							<td>{{$peticion->nombre}}</td>
-							<td>{{$peticion->zona}}</td>
-							<td>{{$peticion->precio}}</td>
+							<td>{{$peticion->zona->nombre}}</td>
+							
 							<td>{{$peticion->capacidad}}</td>
 							<td>{{$peticion->tipo}}</td>
 							<td>
@@ -81,9 +82,9 @@
 			  	<tr>
 			      	<th>Nombre</th>
 					<th>Email</th>
+					<th>Teléfono</th>
 					<th>Lugar</th>
 			      	<th>Zona</th>
-			      	<th>Precio promedio</th>
 			      	<th>Capacidad</th>
 					<th>Tipo</th>
 					<th></th>
@@ -175,6 +176,10 @@
 				      <th>Nombre del lugar</th>
 				      <td>{{$peticion->nombre}}</td>
 				    </tr>
+						<tr>
+				      <th>Teléfono del lugar</th>
+				      <td>{{$peticion->telefono_lugar}}</td>
+				    </tr>
 				    <tr>
 				      <th>Descripción</th>
 				      <td>{{$peticion->descripcion}}</td>
@@ -189,16 +194,17 @@
 				    </tr>
 				    <tr>
 				      <th>Zona</th>
-				      <td>{{$peticion->zona}}</td>
-				    </tr>
-				    <tr>
-				      <th>Precio promedio</th>
-				      <td>{{$peticion->precio}}</td>
+				      <td>{{$peticion->zona->nombre}}</td>
 				    </tr>
 				    <tr>
 				      <th>Capacidad</th>
 				      <td>{{$peticion->capacidad}}</td>
 				    </tr>
+						<tr>
+				      <th>Tamaño (m<sup>3</sup>)</th>
+				      <td>{{$peticion->capacidad}}</td>
+				    </tr>
+						
 				    <tr>
 				      <th>Reglamento</th>
 				      <td>{{$peticion->reglamento}}</td>
@@ -220,8 +226,26 @@
 				    </tr>
 				    <tr>
 				      <th>Imágen</th>
-				      <td><img src="{{url('uploads/venues')}}/{{$peticion->imagen}}" style="max-width: 150px;" alt=""></td>
+				      <td><img src="{{url('uploads/venues')}}/{{$peticion->imagen}}" class="materialboxed" style="max-width: 150px;" alt=""></td>
 				    </tr>
+						@if($peticion->galeria)
+						<tr>
+				      <th>Galería</th>
+				      <td>
+							@foreach($peticion->galeria as $poplet)
+								<img src="{{url('uploads/venues/poplets/')}}/{{$peticion->id}}/{{$poplet->imagen}}" class="materialboxed" style="max-width: 150px;" alt="">
+							@endforeach
+							</td>
+						</tr>
+						<style>
+							.material-placeholder{
+								float: left;
+							}
+							.materialboxed.active{
+									max-width: 100% !important;
+							}
+						</style>
+						@endif
 				</tbody>
 	      	</table>
 	      </div>	

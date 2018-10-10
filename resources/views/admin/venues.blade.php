@@ -32,7 +32,6 @@
 			  	<tr>
 					<th>Nombre</th>
 			      	<th>Zona</th>
-			      	<th>Precio</th>
 			      	<th>Capacidad</th>
 					<th>Tipo</th>
 					<th></th>
@@ -45,7 +44,7 @@
 						<tr>
 							<td>{{$venue->nombre}}</td>
 							<td>{{$venue->zona->nombre}}</td>
-							<td>{{$venue->precio}}</td>
+			
 							<td>{{$venue->capacidad}}</td>
 							<td>{{$venue->tipo}}</td>
 							<td>
@@ -59,7 +58,7 @@
 					<tr style="cursor: pointer;">
 						<td></td>
 						<td></td>
-						<td></td>
+		
 						<td></td>
 						<td></td>
 						<td></td>						
@@ -75,7 +74,7 @@
 			  	<tr>
 			      	<th>Nombre</th>
 			      	<th>Zona</th>
-			      	<th>Precio</th>
+			
 			      	<th>Capacidad</th>
 					<th>Tipo</th>
 					<th></th>
